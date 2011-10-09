@@ -1,0 +1,6 @@
+FilterFactory::loadFilters: /home/carles/.pinot/filters is not a directory
+ModuleFactory::loadModules: /home/carles/.pinot/backends is not a directory
+Couldn't open settings file /home/carles/.pinot/ui.xml
+/home/carles/.pinot/history-daemon: no such column: Language
+0 actions left
+System is on AC

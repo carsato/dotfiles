@@ -1,0 +1,6 @@
+FilterFactory::loadFilters: /home/carles/.pinot/filters is not a directory
+ModuleFactory::loadModules: /home/carles/.pinot/backends is not a directory
+/home/carles/.pinot/history: no such table: ActionQueue
+/home/carles/.pinot/history: no such table: QueryHistory
+/home/carles/.pinot/history: no such table: ViewHistory
+Exiting...

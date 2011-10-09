@@ -1,0 +1,598 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+  <link rel="Stylesheet" type="text/css" href="/css/style.css" >
+  <title>search : vim online</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <meta name="KEYWORDS" content="Vim, Vi IMproved, text editor, home, documentation, tips, scripts, news">
+  <link rel="shortcut icon" type="image/x-icon" href="/images/vim_shortcut.ico">
+</head>
+
+<body topmargin="0" leftmargin="0" marginheight="0" marginwidth="0" bgcolor="#ffffff"> 
+
+<!-- HEADER, SPONSOR IMAGE, VIM IMAGE AND BOOK AD -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0" bordercolor="red">
+  <tr>
+    <td colspan="4" class="lightbg"><img src="/images/spacer.gif" width="1" height="5" alt=""></td>
+  </tr>
+  <tr>
+  <td class="lightbg">&nbsp;&nbsp;&nbsp;</td>
+  <td class="lightbg" align="left"><a href="/sponsor/index.php"><img src="/images/sponsorvim.gif" alt="sponsor Vim development" border="0"></a></td>
+    <td class="lightbg" align="center"><a href="/index.php"><img src="/images/vim_header.gif" border="0" alt="Vim logo"></a></td>
+    <td class="lightbg" align="right"><a href="http://iccf-holland.org/click5.html"><img src="/images/buyhelplearn.gif" alt="Vim Book Ad" border="0"></a></td>
+  </tr>
+  <tr>
+    <td colspan="4" class="lightbg"><img src="/images/spacer.gif" width="1" height="5" alt=""></td>
+  </tr>
+  <tr>
+    <td colspan="4" class="darkbg"><img src="/images/spacer.gif" width="1" height="10" alt=""></td>
+  </tr>
+</table>
+<!-- THE PAGE BODY: BETWEEN HEADER AND FOOTER -->
+
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+  <col width="180">
+  <col width="1">
+
+  <tr valign="top">
+    <td class="sidebar">
+      <table width="180" cellpadding="4" cellspacing="0" border="0">
+        <tr valign="top">
+          <td class="sidebar">
+
+<!-- INCLUDE THE PAGE NAVIGATION -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0" bordercolor="red">
+    <tr>
+        <td><small>not logged in (<a href="/login.php">login</a>)</small></td>
+    </tr>
+    <tr><td>
+<small>&nbsp;</small>
+<form action="http://www.google.com/cse" id="cse-search-box">
+  <div>
+    <input type="hidden" name="cx" value="partner-pub-3005259998294962:bvyni59kjr1" />
+    <input type="hidden" name="ie" value="ISO-8859-1" />
+    <input type="text" name="q" size="20" />
+    <br>
+    <input type="submit" name="sa" value="Search" />
+  </div>
+</form>
+<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en"></script>
+    </td></tr>
+    <tr>
+        <td><img src="/images/spacer.gif" alt="" border="0" width="1" height="1"></td>
+    </tr>
+    <tr>
+        <td class="darkbg"><img src="/images/spacer.gif" alt='' border="0" height="3"></td>
+    </tr>
+    <tr>
+        <td><img src="/images/spacer.gif" alt="" border="0" width="1" height="2"></td>
+    </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/index.php">Home</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader">Advanced search</td>
+        </tr>
+    <tr>
+        <td><img src="/images/spacer.gif" alt="" border="0" width="1" height="7"></td>
+    </tr>
+    <tr>
+        <td class="checker"><img src="/images/spacer.gif" alt='' border="0" height="1"></td>
+    </tr>
+    <tr>
+        <td><img src="/images/spacer.gif" alt="" border="0" width="1" height="7"></td>
+    </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/about.php">About Vim</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/community.php">Community</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/news/news.php">News</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/sponsor/index.php">Sponsoring</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/trivia.php">Trivia</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/docs.php">Documentation</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/download.php">Download</a></td>
+        </tr>
+    <tr>
+        <td><img src="/images/spacer.gif" alt="" border="0" width="1" height="7"></td>
+    </tr>
+    <tr>
+        <td class="checker"><img src="/images/spacer.gif" alt='' border="0" height="1"></td>
+    </tr>
+    <tr>
+        <td><img src="/images/spacer.gif" alt="" border="0" width="1" height="7"></td>
+    </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/scripts/index.php">Scripts</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/tips/index.php">Tips</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/account/index.php">My Account</a></td>
+        </tr>
+    <tr>
+        <td><img src="/images/spacer.gif" alt="" border="0" width="1" height="7"></td>
+    </tr>
+    <tr>
+        <td class="checker"><img src="/images/spacer.gif" alt='' border="0" height="1"></td>
+    </tr>
+    <tr>
+        <td><img src="/images/spacer.gif" alt="" border="0" width="1" height="7"></td>
+    </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/huh.php">Site Help</a></td>
+        </tr>
+</table>
+<br>
+<g:plusone></g:plusone>
+
+            <table width="172" cellpadding="0" cellspacing="0" border="0">
+              <tr><td><img src="/images/spacer.gif" alt="" border="0" width="1" height="8"></td></tr>
+              <tr><td class="darkbg"><img src="/images/spacer.gif" width="1" height="3" alt=""></td></tr>
+            </table>
+            <br>
+
+<!-- INCLUDE THE PAGE SIDEBAR TEXT -->
+&nbsp;
+
+          </td>
+        </tr>
+      </table>
+    </td>
+
+    <td class="darkbg"><img src="/images/spacer.gif" width="1" height="1" border="0" alt=""><br></td>
+    <td>
+      <table width="100%" cellpadding="10" cellspacing="0" border="0" bordercolor="red">
+        <tr>
+          <td valign="top">
+
+
+<table cellpadding="3" cellspacing="0" border="0" width="100%">
+<tr>
+    <td class="lightbg"><span class="txth1">&nbsp;&nbsp;Google Search on Vim pages</span></td>
+</tr>
+</table>
+<p>
+<form action="http://www.google.com/cse" id="cse-search-box">
+  <div>
+    <IMG SRC="http://www.google.com/logos/Logo_40wht.gif" border=0 ALT="Google" align=middle>
+    <input type="hidden" name="cx" value="partner-pub-3005259998294962:bvyni59kjr1" />
+    <input type="hidden" name="ie" value="ISO-8859-1" />
+    <input type="text" name="q" size="30" />
+    <input type="submit" name="sa" value="Search Vim sites" />
+  </div>
+</form>
+<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en"></script>
+<p>
+
+<table cellpadding="3" cellspacing="0" border="0" width="100%">
+<tr>
+    <td class="lightbg"><span class="txth1">&nbsp;&nbsp;Search for Vim Scripts</span></td>
+</tr>
+</table>
+<p>
+<!-- Google Code Search -->
+<span class="prompt">on the web and the Vim website:</span>
+<form method="get" action="http://www.google.com/codesearch">
+<input size=35 name="as_q">
+<!-- The "Search" button -->
+<input type=submit value="Google Code Search">
+<input type=hidden name="as_lang" value="vim"><br>
+<font face="arial,sans-serif" size=-1>
+You can use a regexp pattern, e.g.,
+<a href="http://www.google.com/codesearch?as_q=go{2}gle&as_lang=vim">go{2}gle</a>,
+<a href="http://www.google.com/codesearch?as_q=h[ea]llo&as_lang=vim">h[ea]llo</a>.
+</font>
+<font size=-2>
+(<a href="http://www.google.com/intl/en/help/faq_codesearch.html#regexp">more about regexp patterns</a>)
+</font>
+</form>
+<!-- Google Code Search -->
+<p>
+
+<span class="prompt">on the Vim website only</span>
+
+      <form name="search" action="scripts/script_search_results.php">
+        <table cellpadding="2" cellspacing="0" border="0">
+          <tr>
+	    <td class="prompt">keywords</td>
+	    <td colspan="2"><input type="text" name="keywords" size="40"></td>
+	  </tr>
+          <tr>
+            <td class="prompt">type</td>
+            <td>
+              <select name="script_type">
+                <option value="">-- all -- </option>
+                <option value="color scheme">color scheme</option>
+<option value="ftplugin">ftplugin</option>
+<option value="game">game</option>
+<option value="indent">indent</option>
+<option value="syntax">syntax</option>
+<option value="utility">utility</option>
+<option value="patch">patch</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td class="prompt">sort by</td>
+            <td>
+  	    <select name="order_by">
+                <option value="rating">Rating</option>
+                <option value="downloads">Downloads</option>
+                <option value="script_name">Script Name</option>
+                <option value="creation_date">Creation Date</option>
+              </select>
+              <select name="direction">
+                <option value="descending">Descending</option>
+                <option value="ascending">Ascending</option>
+              </select>
+	    </td>
+	    <td align="right">
+              <input type="submit" name="search" value="search">
+              <input type="submit" name="cancel" value="cancel">
+	    </td>
+          </tr>
+        </table>
+      </form>
+<p>
+
+
+<table cellpadding="3" cellspacing="0" border="0" width="100%">
+  <tr>
+    <td class="lightbg"><span class="txth1">&nbsp;&nbsp;Search for Vim Tips</span></td>
+  </tr>
+</table>
+<p>
+
+<span class="prompt">on the Vim website only:</span>
+<font size=-1>
+(you can also search the
+<a href="http://vim.wikia.com/wiki/Vim_Tips_Wiki">Vim Tips wiki</a>.
+)
+</font>
+
+<form name="search" action="tips/tip_search_results.php">
+<table cellpadding="2" cellspacing="0" border="0">
+<tr>
+  <td class="prompt">keywords</td>
+  <td colspan="2"><input type="text" name="keywords" size="40"></td>
+</tr>
+<tr>
+  <td class="prompt">sort by</td>
+  <td>
+    <select name="order_by">
+        <option value="rating">Rating</option>
+        <option value="views">Views</option>
+        <option value="creation_date">Creation Date</option>
+    </select>
+    <select name="direction">
+        <option value="descending">Descending</option>
+        <option value="ascending">Ascending</option>
+    </select>
+  </td>
+  <td align="right">
+    <input type="submit" name="search" value="search">
+    <input type="submit" name="cancel" value="cancel">
+  </td>
+</tr>
+</table>
+</form>
+<p>
+
+
+<table cellpadding="3" cellspacing="0" border="0" width="100%">
+  <tr>
+    <td class="lightbg"><span class="txth1">&nbsp;&nbsp;Search for user</span></td>
+  </tr>
+</table>
+<p>
+
+<form name="search" action="account/user_search_results.php">
+<table cellpadding="2" cellspacing="0" border="0">
+<tr>
+  <td class="prompt">user name</td>
+  <td><input type="text" name="username" size="40"></td>
+</tr>
+<tr>
+  <td class="prompt">last name</td>
+  <td><input type="text" name="lastname" size="40"></td>
+</tr>
+<tr>
+  <td></td>
+  <td align="right">
+    <input type="submit" name="search" value="search">
+    <input type="submit" name="cancel" value="cancel">
+  </td>
+</tr>
+</table>
+</form>
+
+<table cellpadding="3" cellspacing="0" border="0" width="100%">
+<tr>
+    <td class="lightbg"><span class="txth1">&nbsp;&nbsp;Search the Vim online pages with Atomz</span></td>
+</tr>
+</table>
+<p>
+
+<!-- Atomz.com Advanced Search HTML for Vi IMproved -->
+<form method="get" action="http://search.atomz.com/search/">
+<table cellspacing=0 cellpadding=0 border=0>
+<tr><td colspan=2>
+<b>Search For:</b><br>
+<input size=35 name="sp-q">
+<!-- The "Search" button -->
+<input type=submit value="Search">
+<input type=hidden name="sp-a" value="00070988-sp00000000">
+<input type=hidden name="sp-advanced" value=1>
+</td></tr>
+<!-- Allow "any," "all," or "phrase" -->
+<tr><td valign=top>
+<b>Match:&nbsp;</b>
+</td><td>
+<input type=radio name="sp-p" value="any" checked>Any&nbsp;word
+<input type=radio name="sp-p" value="all">All&nbsp;words
+<input type=radio name="sp-p" value="phrase">Exact&nbsp;phrase<br>
+<!-- Checkbox enables sound-alike matching -->
+<input type=hidden name="sp-w-control" value=1>
+<input type=checkbox name="sp-w" value="alike" checked>
+Sound-alike&nbsp;matching
+</td></tr>
+<!-- List box selects the search field -->
+<tr><td valign=top>
+<b>Within:&nbsp;</b>
+</td><td><select name="sp-x" size=1>
+<option value="any" selected	>Anywhere</option>
+<option value="title"		>Title</option>
+<option value="desc"		>Description</option>
+<option value="keys"		>Keywords</option>
+<option value="body"		>Body</option>
+<option value="alt"		>Alternate text</option>
+<option value="url"		>URL</option>
+</select>
+</td></tr>
+<!-- List box selects number of results to show per page -->
+<tr><td valign=top>
+<b>Show:&nbsp;</b>
+</td><td><select name="sp-c" size=1>
+<option value=5>5</option>
+<option value=10 selected>10</option>
+<option value=25>25</option>
+<option value=50>50</option>
+<option value=100>100</option>
+</select>&nbsp;results&nbsp;
+<!-- Show or hide summaries in search results -->
+<select name="sp-m" size=1>
+<option value=1 selected>with</option>
+<option value=0>without</option>
+</select>&nbsp;summaries<br>
+</td></tr>
+<!-- Sort results by score or by date -->
+<tr><td valign=top>
+<b>Sort&nbsp;by:&nbsp;</b>
+</td><td><select name="sp-s" size=1>
+<option value=0 selected>score</option>
+<option value=1>date</option>
+</select>
+</td></tr>
+</table>
+</form>
+
+
+<!-- fill up with spaces to make the main field wide enough -->
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+<!-- finish off the framework -->
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td class="darkbg"><img src="/images/spacer.gif" width="1" height="1" border="0" alt=""><br></td>
+
+    <td class="sidebar">
+      <table width="128" cellpadding="4" cellspacing="0" border="0">
+        <tr valign="top">
+          <td class="sidebar">
+
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-3005259998294962";
+/* 160x600, created 7/25/08 */
+google_ad_slot = "4419468696";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+
+	  </td>
+	</tr>
+        <tr valign="top">
+          <td class="sidebar" align='center'>
+             &nbsp;<br>
+	     <a href="http://iccf-holland.org/clickkindle.html"><img src="/images/kindle_125x125.gif" alt="Buy a book, help Uganda, learn Vim"></a>
+	     <br>
+	     <a href="http://iccf-holland.org/click1.html">Buy at Amazon<br>Help Uganda</a>
+          </td>
+        </tr>
+      </table>
+    </td>
+
+  </tr>
+</table>
+
+<!-- END OF THE PAGE BODY: BETWEEN HEADER AND FOOTER -->
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" bordercolor="red">
+  <tr><td colspan="4"><img src="/images/spacer.gif" width="1" height="5" alt=""></td></tr>
+  <tr><td colspan="4" bgcolor="#000000"><img src="/images/spacer.gif" height="2" width="1" alt=""></td></tr>
+  <tr><td colspan="4"><img src="/images/spacer.gif" width="1" height="5" alt=""></td></tr>
+  <tr>
+    <td><img src="/images/spacer.gif" width="5" height="1" alt=""></td>
+
+    <td align="left" valign="top"><small>
+      If you have questions or remarks about this site, visit the
+      <a href="http://vimonline.sf.net">vimonline development</a> pages.
+      Please use this site responsibly.
+      <br> 
+      
+      Questions about <a href="http://www.vim.org/about.php">Vim</a> should go
+      to the <a href="http://www.vim.org/maillist.php">maillist</a>.
+      Help Bram <a href="http://iccf-holland.org/">help Uganda</a>.
+      </small>
+	&nbsp;
+	&nbsp;
+
+	<!-- Start of StatCounter Code -->
+	<script type="text/javascript" language="javascript">
+	var sc_project=1417324; 
+	var sc_invisible=1; 
+	var sc_partition=11; 
+	var sc_security="d41633bc"; 
+	</script>
+
+	<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/counter.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c12.statcounter.com/counter.php?sc_project=1417324&java=0&security=d41633bc&invisible=0" alt="free tracking" border="0"></a> </noscript>
+	<!-- End of StatCounter Code -->
+          </td>
+
+    <td align="right" valign="top">
+      		<a href="http://sourceforge.net/projects/vim" rel="nofollow"><img src="http://sflogo.sourceforge.net/sflogo.php?group_id=8&type=1" width="88" height="31" border="0" alt="SourceForge.net Logo" /></a>
+    </td>
+
+    <td><img src="/images/spacer.gif" width="5" height="1" alt=""></td>
+  </tr>
+
+    
+  <tr><td colspan="4"><img src="/images/spacer.gif" width="1" height="5" alt=""></td>
+  
+  </tr>
+</table>
+
+<!-- for Google +1 button -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+</body>
+</html>
+

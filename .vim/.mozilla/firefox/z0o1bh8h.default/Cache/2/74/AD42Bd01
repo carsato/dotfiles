@@ -1,0 +1,481 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+  <link rel="Stylesheet" type="text/css" href="/css/style.css" >
+  <title>snipMate - TextMate-style snippets for Vim : vim online</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <meta name="KEYWORDS" content="Vim, Vi IMproved, text editor, home, documentation, tips, scripts, news">
+  <link rel="shortcut icon" type="image/x-icon" href="/images/vim_shortcut.ico">
+</head>
+
+<body topmargin="0" leftmargin="0" marginheight="0" marginwidth="0" bgcolor="#ffffff"> 
+
+<!-- HEADER, SPONSOR IMAGE, VIM IMAGE AND BOOK AD -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0" bordercolor="red">
+  <tr>
+    <td colspan="4" class="lightbg"><img src="/images/spacer.gif" width="1" height="5" alt=""></td>
+  </tr>
+  <tr>
+  <td class="lightbg">&nbsp;&nbsp;&nbsp;</td>
+  <td class="lightbg" align="left"><a href="/sponsor/index.php"><img src="/images/sponsorvim.gif" alt="sponsor Vim development" border="0"></a></td>
+    <td class="lightbg" align="center"><a href="/index.php"><img src="/images/vim_header.gif" border="0" alt="Vim logo"></a></td>
+    <td class="lightbg" align="right"><a href="http://iccf-holland.org/click5.html"><img src="/images/buyhelplearn.gif" alt="Vim Book Ad" border="0"></a></td>
+  </tr>
+  <tr>
+    <td colspan="4" class="lightbg"><img src="/images/spacer.gif" width="1" height="5" alt=""></td>
+  </tr>
+  <tr>
+    <td colspan="4" class="darkbg"><img src="/images/spacer.gif" width="1" height="10" alt=""></td>
+  </tr>
+</table>
+<!-- THE PAGE BODY: BETWEEN HEADER AND FOOTER -->
+
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+  <col width="180">
+  <col width="1">
+
+  <tr valign="top">
+    <td class="sidebar">
+      <table width="180" cellpadding="4" cellspacing="0" border="0">
+        <tr valign="top">
+          <td class="sidebar">
+
+<!-- INCLUDE THE PAGE NAVIGATION -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0" bordercolor="red">
+    <tr>
+        <td><small>not logged in (<a href="/login.php">login</a>)</small></td>
+    </tr>
+    <tr><td>
+<small>&nbsp;</small>
+<form action="http://www.google.com/cse" id="cse-search-box">
+  <div>
+    <input type="hidden" name="cx" value="partner-pub-3005259998294962:bvyni59kjr1" />
+    <input type="hidden" name="ie" value="ISO-8859-1" />
+    <input type="text" name="q" size="20" />
+    <br>
+    <input type="submit" name="sa" value="Search" />
+  </div>
+</form>
+<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en"></script>
+    </td></tr>
+    <tr>
+        <td><img src="/images/spacer.gif" alt="" border="0" width="1" height="1"></td>
+    </tr>
+    <tr>
+        <td class="darkbg"><img src="/images/spacer.gif" alt='' border="0" height="3"></td>
+    </tr>
+    <tr>
+        <td><img src="/images/spacer.gif" alt="" border="0" width="1" height="2"></td>
+    </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/index.php">Home</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/search.php">Advanced search</a></td>
+        </tr>
+    <tr>
+        <td><img src="/images/spacer.gif" alt="" border="0" width="1" height="7"></td>
+    </tr>
+    <tr>
+        <td class="checker"><img src="/images/spacer.gif" alt='' border="0" height="1"></td>
+    </tr>
+    <tr>
+        <td><img src="/images/spacer.gif" alt="" border="0" width="1" height="7"></td>
+    </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/about.php">About Vim</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/community.php">Community</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/news/news.php">News</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/sponsor/index.php">Sponsoring</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/trivia.php">Trivia</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/docs.php">Documentation</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/download.php">Download</a></td>
+        </tr>
+    <tr>
+        <td><img src="/images/spacer.gif" alt="" border="0" width="1" height="7"></td>
+    </tr>
+    <tr>
+        <td class="checker"><img src="/images/spacer.gif" alt='' border="0" height="1"></td>
+    </tr>
+    <tr>
+        <td><img src="/images/spacer.gif" alt="" border="0" width="1" height="7"></td>
+    </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/scripts/index.php">Scripts</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/tips/index.php">Tips</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/account/index.php">My Account</a></td>
+        </tr>
+    <tr>
+        <td><img src="/images/spacer.gif" alt="" border="0" width="1" height="7"></td>
+    </tr>
+    <tr>
+        <td class="checker"><img src="/images/spacer.gif" alt='' border="0" height="1"></td>
+    </tr>
+    <tr>
+        <td><img src="/images/spacer.gif" alt="" border="0" width="1" height="7"></td>
+    </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/huh.php">Site Help</a></td>
+        </tr>
+</table>
+<br>
+<g:plusone></g:plusone>
+
+            <table width="172" cellpadding="0" cellspacing="0" border="0">
+              <tr><td><img src="/images/spacer.gif" alt="" border="0" width="1" height="8"></td></tr>
+              <tr><td class="darkbg"><img src="/images/spacer.gif" width="1" height="3" alt=""></td></tr>
+            </table>
+            <br>
+
+<!-- INCLUDE THE PAGE SIDEBAR TEXT -->
+&nbsp;
+
+          </td>
+        </tr>
+      </table>
+    </td>
+
+    <td class="darkbg"><img src="/images/spacer.gif" width="1" height="1" border="0" alt=""><br></td>
+    <td>
+      <table width="100%" cellpadding="10" cellspacing="0" border="0" bordercolor="red">
+        <tr>
+          <td valign="top">
+
+<span class="txth1">snipMate : TextMate-style snippets for Vim</span> 
+
+<br>
+<br>
+
+<!-- karma table -->
+<table cellpadding="4" cellspacing="0" border="1" bordercolor="#000066">
+<tr>
+  <td class="lightbg"><b>&nbsp;script karma&nbsp;</b></td>
+  <td>
+    Rating <b>4630/1363</b>,
+    Downloaded by 42692    &nbsp;
+    <g:plusone></g:plusone>
+  </td>
+  <td class="lightbg">
+  <b>&nbsp;Comments, bugs, improvements&nbsp;</b>
+  </td>
+  <td>
+    <a href="http://vim.wikia.com/wiki/Script:2540">Vim wiki</a>
+  </td>  
+</tr>
+</table>
+<p>
+
+<table cellspacing="0" cellpadding="0" border="0">
+<tr><td class="prompt">created by</td></tr>
+<tr><td><a href="/account/profile.php?user_id=16544">Michael Sanders</a></td></tr>
+<tr><td>&nbsp;</td></tr>
+<tr><td class="prompt">script type</td></tr>
+<tr><td>utility</td></tr>
+<tr><td>&nbsp;</td></tr>
+<tr><td class="prompt">description</td></tr>
+<tr><td>snipMate.vim aims to be an unobtrusive, concise vim script that implements some of TextMate's snippets features in Vim. A snippet is a piece of often-typed text that you can insert into your document using a trigger word followed by a &lt;tab&gt;.<br><br>For instance, in a C file using the default installation of snipMate.vim, if you type &quot;for&lt;tab&gt;&quot; in insert mode, it will expand a typical for loop in C:<br><br> for (i = 0; i &lt; count; i++) {<br><br> }<br><br>To go to the next item in the loop, simply &lt;tab&gt; over to it; if there is repeated code, such as the &quot;i&quot; variable in this example, you can simply start typing once it's highlighted and all the matches specified in the snippet will be updated.<br><br>Requires Vim 7 or higher.<br>For a quick introduction, see this screencast: <a target="_blank" href="http://vimeo.com/3535418">http://vimeo.com/3535418</A><br>For more help see the documentation that comes with snipMate in ~/.vim/doc/snipMate.txt.<br><br>snipMate.vim has the following features among others:<br>&nbsp;&nbsp;- The syntax of snippets is very similar to TextMate's, allowing easy conversion.<br>&nbsp;&nbsp;- The position of the snippet is kept transparently (i.e., it does not use marks/placeholders inserted into the buffer), allowing you to escape out of an incomplete snippet, something particularly useful in Vim.<br>&nbsp;&nbsp;- Variables in snippets are updated as-you-type.<br>&nbsp;&nbsp;- Snippets can have multiple matches.<br>&nbsp;&nbsp;- Snippets can be out of order. For instance, in a do...while loop, the condition can be added before the code.<br><br>Bug reports, feature requests, etc. are welcome and can be emailed to me or submitted on the issue tracker: <a target="_blank" href="http://code.google.com/p/snipmate/issues/list">http://code.google.com/p/snipmate/issues/list</A><br><br>If you would like to watch the development of this plugin, you can also follow it on github: <a target="_blank" href="http://github.com/msanders/snipmate.vim">http://github.com/msanders/snipmate.vim</A><br><br>Enjoy!</td></tr>
+<tr><td>&nbsp;</td></tr>
+<tr><td class="prompt">install details</td></tr>
+<tr><td>unzip snipMate.zip -d ~/.vim (or equivalent, e.g. $HOME\vimfiles on Windows)<br><br>Keep in mind this will overwrite any files included with older versions of snipMate, including the default *.snippets files for the included filetypes. If you don't want your snippets overwritten, just name them name them differently than the default snippets, e.g. c-mysnips.snippets.<br><br>NOTE: remember to add &quot;:filetype plugin on&quot; to your .vimrc, otherwise snippets will not work! This is one of the most common issue new users face when trying snipMate.<br><br>Remember to run &quot;:helptags ~/.vim/doc&quot; to enable the help.</td></tr>
+<tr><td>&nbsp;</td></tr>
+</table>
+
+<!-- rating table -->
+<form name="rating" method="post">
+<input type="hidden" name="script_id" value="2540">
+<table cellpadding="4" cellspacing="0" border="1" bordercolor="#000066">
+<tr>
+  <td class="lightbg"><b>rate this script</b></td>
+  <td valign="middle">
+    <input type="radio" name="rating" value="life_changing">Life Changing
+    <input type="radio" name="rating" value="helpful">Helpful
+    <input type="radio" name="rating" value="unfulfilling">Unfulfilling&nbsp;
+    <input type="submit" value="rate">
+  </td>
+</tr>
+</table>
+</form>
+<span class="txth2">script versions</span> (<a href="add_script_version.php?script_id=2540">upload new version</a>)
+<p>
+Click on the package to download.
+<p>
+
+<table cellspacing="2" cellpadding="4" border="0" width="100%">
+<tr class='tableheader'>
+        <th valign="top">package</th>
+    <th valign="top">script version</th>
+    <th valign="top">date</th>
+    <th valign="top">Vim version</th>
+    <th valign="top">user</th>
+    <th valign="top">release notes</th>
+</tr>
+<tr>
+        <td class="rowodd" valign="top" nowrap><a href="download_script.php?src_id=11006">snipMate.zip</a></td>
+    <td class="rowodd" valign="top" nowrap><b>0.83</b></td>
+    <td class="rowodd" valign="top" nowrap><i>2009-07-13</i></td>
+    <td class="rowodd" valign="top" nowrap>7.0</td>
+    <td class="rowodd" valign="top"><i><a href="/account/profile.php?user_id=16544">Michael Sanders</a></i></td>
+    <td class="rowodd" valign="top" width="2000">Fixed bug when leaving snippet for another buffer, having a variable at the end of a line in a snippet, or typing certain characters in select mode, and (finally) added support for &lt;shift-tab&gt; to go back a tab stop. Also added snippets for zsh (thanks israelchauca) and mako (thanks &quot;iElectric&quot;), and updated C, Obj-C, and C++ snippets.</td>
+</tr>
+<tr>
+        <td class="roweven" valign="top" nowrap><a href="download_script.php?src_id=10801">snipMate.zip</a></td>
+    <td class="roweven" valign="top" nowrap><b>0.82</b></td>
+    <td class="roweven" valign="top" nowrap><i>2009-06-11</i></td>
+    <td class="roweven" valign="top" nowrap>7.0</td>
+    <td class="roweven" valign="top"><i><a href="/account/profile.php?user_id=16544">Michael Sanders</a></i></td>
+    <td class="roweven" valign="top" width="2000">Fixed a bug with &lt;c-r&gt;&lt;tab&gt;, placeholders, or having more than 9 tab stops on the same line, and added a Python snippet for the lambda (thanks voyeg3r), as well as snippets for the Tcl (thanks israelchauca) and AutoIt (thanks Angel Ezquerra Moreu) filetypes.</td>
+</tr>
+<tr>
+        <td class="rowodd" valign="top" nowrap><a href="download_script.php?src_id=10608">snipMate.zip</a></td>
+    <td class="rowodd" valign="top" nowrap><b>0.81</b></td>
+    <td class="rowodd" valign="top" nowrap><i>2009-05-16</i></td>
+    <td class="rowodd" valign="top" nowrap>7.0</td>
+    <td class="rowodd" valign="top"><i><a href="/account/profile.php?user_id=16544">Michael Sanders</a></i></td>
+    <td class="rowodd" valign="top" width="2000">Added syntax highlighting to show errors in snippet files, fixed typos in certain snippets, fixed a bug with &quot;&&quot; in placeholders, fixed a bug when canceling multi-snippets, and fixed a bug when inserting a new line in a snippet.</td>
+</tr>
+<tr>
+        <td class="roweven" valign="top" nowrap><a href="download_script.php?src_id=10516">snipMate.zip</a></td>
+    <td class="roweven" valign="top" nowrap><b>0.8</b></td>
+    <td class="roweven" valign="top" nowrap><i>2009-05-03</i></td>
+    <td class="roweven" valign="top" nowrap>7.0</td>
+    <td class="roweven" valign="top"><i><a href="/account/profile.php?user_id=16544">Michael Sanders</a></i></td>
+    <td class="roweven" valign="top" width="2000">Added & fixed some snippets, and added a menu that displays all snippets for the current buffer when &lt;c-r&gt;&lt;tab&gt; is typed in insert mode. <br><br>I've removed convertSnip.py from this release since most snippets should be converted by now; if you still need it, just grab it from an earlier release.</td>
+</tr>
+<tr>
+        <td class="rowodd" valign="top" nowrap><a href="download_script.php?src_id=10393">snipMate.zip</a></td>
+    <td class="rowodd" valign="top" nowrap><b>0.79</b></td>
+    <td class="rowodd" valign="top" nowrap><i>2009-04-14</i></td>
+    <td class="rowodd" valign="top" nowrap>7.0</td>
+    <td class="rowodd" valign="top"><i><a href="/account/profile.php?user_id=16544">Michael Sanders</a></i></td>
+    <td class="rowodd" valign="top" width="2000">Added support for more than 9 tab stops, fixed typos in certain snippets, and cleaned up the code a bit.</td>
+</tr>
+<tr>
+        <td class="roweven" valign="top" nowrap><a href="download_script.php?src_id=10357">snipMate.zip</a></td>
+    <td class="roweven" valign="top" nowrap><b>0.78</b></td>
+    <td class="roweven" valign="top" nowrap><i>2009-04-06</i></td>
+    <td class="roweven" valign="top" nowrap>7.0</td>
+    <td class="roweven" valign="top"><i><a href="/account/profile.php?user_id=16544">Michael Sanders</a></i></td>
+    <td class="roweven" valign="top" width="2000">Fixed bug with aliased filetypes (e.g. loading C snippets for Obj-C files), updating placeholders on separate lines, and extracting snippets on Windows. Also added a few more Python, C, and Obj-C snippets, and fixed some typos in the Latex and C++ snippets.</td>
+</tr>
+<tr>
+        <td class="rowodd" valign="top" nowrap><a href="download_script.php?src_id=10317">snipMate.zip</a></td>
+    <td class="rowodd" valign="top" nowrap><b>0.77</b></td>
+    <td class="rowodd" valign="top" nowrap><i>2009-03-30</i></td>
+    <td class="rowodd" valign="top" nowrap>7.0</td>
+    <td class="rowodd" valign="top"><i><a href="/account/profile.php?user_id=16544">Michael Sanders</a></i></td>
+    <td class="rowodd" valign="top" width="2000">Fixed bug with single quotes (') in snippet triggers, and hyphenated global snippets (e.g., _-mysnips.snippets).</td>
+</tr>
+<tr>
+        <td class="roweven" valign="top" nowrap><a href="download_script.php?src_id=10316">snipMate.zip</a></td>
+    <td class="roweven" valign="top" nowrap><b>0.76</b></td>
+    <td class="roweven" valign="top" nowrap><i>2009-03-29</i></td>
+    <td class="roweven" valign="top" nowrap>7.0</td>
+    <td class="roweven" valign="top"><i><a href="/account/profile.php?user_id=16544">Michael Sanders</a></i></td>
+    <td class="roweven" valign="top" width="2000">Fixed bug with extracting snippet files on Windows, folding, and a minor bug with supertab.</td>
+</tr>
+<tr>
+        <td class="rowodd" valign="top" nowrap><a href="download_script.php?src_id=10307">snipMate.zip</a></td>
+    <td class="rowodd" valign="top" nowrap><b>0.75</b></td>
+    <td class="rowodd" valign="top" nowrap><i>2009-03-27</i></td>
+    <td class="rowodd" valign="top" nowrap>7.0</td>
+    <td class="rowodd" valign="top"><i><a href="/account/profile.php?user_id=16544">Michael Sanders</a></i></td>
+    <td class="rowodd" valign="top" width="2000">Added fix for hyphenated *.snippets files.</td>
+</tr>
+<tr>
+        <td class="roweven" valign="top" nowrap><a href="download_script.php?src_id=10293">snipMate.zip</a></td>
+    <td class="roweven" valign="top" nowrap><b>0.74</b></td>
+    <td class="roweven" valign="top" nowrap><i>2009-03-26</i></td>
+    <td class="roweven" valign="top" nowrap>7.0</td>
+    <td class="roweven" valign="top"><i><a href="/account/profile.php?user_id=16544">Michael Sanders</a></i></td>
+    <td class="roweven" valign="top" width="2000">This release completely eliminates command-based snippets in favor of a new, easier to read & maintain syntax. A python script, convertSnip.py, has been included in this release to make it easier to migrate. For more information, see :h snippet-syntax; it's not very complicated, so it shouldn't take too much time to understand. <br><br>This release also fixes a number of bugs, including: support for supertab, special characters in snippet variables, the popup-menu, and adds support for hyphened snippet folders (e.g. snippets/c-snippets/ for C).</td>
+</tr>
+<tr>
+        <td class="rowodd" valign="top" nowrap><a href="download_script.php?src_id=10214">snipMate.zip</a></td>
+    <td class="rowodd" valign="top" nowrap><b>0.73</b></td>
+    <td class="rowodd" valign="top" nowrap><i>2009-03-15</i></td>
+    <td class="rowodd" valign="top" nowrap>7.0</td>
+    <td class="rowodd" valign="top"><i><a href="/account/profile.php?user_id=16544">Michael Sanders</a></i></td>
+    <td class="rowodd" valign="top" width="2000">Fixed bug with redefinition of C++ snippets, fixed a bug when using the completion menu, added support for the 'shellslash' option (thanks Derek Wyatt), and added support for buffer-local snippets (thanks Meikel Brandmeyer).</td>
+</tr>
+<tr>
+        <td class="roweven" valign="top" nowrap><a href="download_script.php?src_id=10161">snipMate.zip</a></td>
+    <td class="roweven" valign="top" nowrap><b>0.72</b></td>
+    <td class="roweven" valign="top" nowrap><i>2009-03-10</i></td>
+    <td class="roweven" valign="top" nowrap>7.0</td>
+    <td class="roweven" valign="top"><i><a href="/account/profile.php?user_id=16544">Michael Sanders</a></i></td>
+    <td class="roweven" valign="top" width="2000">Fixed a bug with variables inside placeholders (e.g. &quot;${1:foo} ${2:$1bar}&quot;).</td>
+</tr>
+<tr>
+        <td class="rowodd" valign="top" nowrap><a href="download_script.php?src_id=10143">snipMate.zip</a></td>
+    <td class="rowodd" valign="top" nowrap><b>0.71</b></td>
+    <td class="rowodd" valign="top" nowrap><i>2009-03-09</i></td>
+    <td class="rowodd" valign="top" nowrap>7.0</td>
+    <td class="rowodd" valign="top"><i><a href="/account/profile.php?user_id=16544">Michael Sanders</a></i></td>
+    <td class="rowodd" valign="top" width="2000">First and foremost, the code has been significantly re-factored; it is a bit longer now, but hopefully at the sake of being much easier to read and maintain.<br><br>This release also adds: support for file-based snippets, support for delimiters before snippet triggers (e.g., &quot;bar.foo&quot; could expand &quot;foo&quot;), and bug fixes.</td>
+</tr>
+<tr>
+        <td class="roweven" valign="top" nowrap><a href="download_script.php?src_id=10028">snipMate.zip</a></td>
+    <td class="roweven" valign="top" nowrap><b>0.6956</b></td>
+    <td class="roweven" valign="top" nowrap><i>2009-02-25</i></td>
+    <td class="roweven" valign="top" nowrap>7.0</td>
+    <td class="roweven" valign="top"><i><a href="/account/profile.php?user_id=16544">Michael Sanders</a></i></td>
+    <td class="roweven" valign="top" width="2000">Forgot a backslash in the supertab.vim fix.</td>
+</tr>
+<tr>
+        <td class="rowodd" valign="top" nowrap><a href="download_script.php?src_id=10026">snipMate.zip</a></td>
+    <td class="rowodd" valign="top" nowrap><b>0.6955</b></td>
+    <td class="rowodd" valign="top" nowrap><i>2009-02-24</i></td>
+    <td class="rowodd" valign="top" nowrap>7.0</td>
+    <td class="rowodd" valign="top"><i><a href="/account/profile.php?user_id=16544">Michael Sanders</a></i></td>
+    <td class="rowodd" valign="top" width="2000">Actually fixed the supertab bug (thanks Asher VanBrunt); also added some more Objective-C snippets, and fixed another bug with expanding snippets before text introduced in the previous version.</td>
+</tr>
+<tr>
+        <td class="roweven" valign="top" nowrap><a href="download_script.php?src_id=10021">snipMate.zip</a></td>
+    <td class="roweven" valign="top" nowrap><b>0.6954</b></td>
+    <td class="roweven" valign="top" nowrap><i>2009-02-24</i></td>
+    <td class="roweven" valign="top" nowrap>7.0</td>
+    <td class="roweven" valign="top"><i><a href="/account/profile.php?user_id=16544">Michael Sanders</a></i></td>
+    <td class="roweven" valign="top" width="2000">Fixed a bug when expanding snippets with text after them, and a bug with expanding evals (`...`) that prevented substitutions containing &quot;\=&quot; such as substitute('foo', '.*', '\=toupper(submatch(0))') from working.<br><br>Also fixed another typo in the Python snippets, and supertab compatibility.</td>
+</tr>
+<tr>
+        <td class="rowodd" valign="top" nowrap><a href="download_script.php?src_id=10003">snipMate.zip</a></td>
+    <td class="rowodd" valign="top" nowrap><b>0.6942</b></td>
+    <td class="rowodd" valign="top" nowrap><i>2009-02-21</i></td>
+    <td class="rowodd" valign="top" nowrap>7.0</td>
+    <td class="rowodd" valign="top"><i><a href="/account/profile.php?user_id=16544">Michael Sanders</a></i></td>
+    <td class="rowodd" valign="top" width="2000">Fixed some typos in LaTeX and Python snippets, and added a snippet for the HTML 5 doctype. <br><br>Also added support for cycling through completions using supertab, and using completions to expand placeholder text.<br><br>The indentation amount for 'expandtab' also now defaults to 'sw' if 'sts' is not set.</td>
+</tr>
+<tr>
+        <td class="roweven" valign="top" nowrap><a href="download_script.php?src_id=9981">snipMate.zip</a></td>
+    <td class="roweven" valign="top" nowrap><b>0.61803399</b></td>
+    <td class="roweven" valign="top" nowrap><i>2009-02-16</i></td>
+    <td class="roweven" valign="top" nowrap>7.0</td>
+    <td class="roweven" valign="top"><i><a href="/account/profile.php?user_id=16544">Michael Sanders</a></i></td>
+    <td class="roweven" valign="top" width="2000">I apparently forgot to update the &quot;Snip!&quot; commands to &quot;Snipp!&quot; in the last version; this update takes care of that (thanks Martin Krauskopf for the bug report). The regex command to update these should actually be &quot;:%s/exe \(.\)Snip\( \|!\)/exe \1Snipp\2&quot;.<br><br>This update also fixes a typo in the &quot;def&quot; ruby snippet (thanks Reza Jelveh & Jan Andersson).</td>
+</tr>
+<tr>
+        <td class="rowodd" valign="top" nowrap><a href="download_script.php?src_id=9975">snipMate.zip</a></td>
+    <td class="rowodd" valign="top" nowrap><b>0.6180339</b></td>
+    <td class="rowodd" valign="top" nowrap><i>2009-02-15</i></td>
+    <td class="rowodd" valign="top" nowrap>7.0</td>
+    <td class="rowodd" valign="top"><i><a href="/account/profile.php?user_id=16544">Michael Sanders</a></i></td>
+    <td class="rowodd" valign="top" width="2000">Added support for 'virtualedit=all' and 'virtualedit=onemore'. Thanks Mikhail Daen for the bug report.</td>
+</tr>
+<tr>
+        <td class="roweven" valign="top" nowrap><a href="download_script.php?src_id=9968">snipMate.zip</a></td>
+    <td class="roweven" valign="top" nowrap><b>0.618033</b></td>
+    <td class="roweven" valign="top" nowrap><i>2009-02-14</i></td>
+    <td class="roweven" valign="top" nowrap>7.0</td>
+    <td class="roweven" valign="top"><i><a href="/account/profile.php?user_id=16544">Michael Sanders</a></i></td>
+    <td class="roweven" valign="top" width="2000">Fixed another bug concerning loading a filetype more than once.</td>
+</tr>
+<tr>
+        <td class="rowodd" valign="top" nowrap><a href="download_script.php?src_id=9966">snipMate.zip</a></td>
+    <td class="rowodd" valign="top" nowrap><b>0.61803</b></td>
+    <td class="rowodd" valign="top" nowrap><i>2009-02-13</i></td>
+    <td class="rowodd" valign="top" nowrap>7.0</td>
+    <td class="rowodd" valign="top"><i><a href="/account/profile.php?user_id=16544">Michael Sanders</a></i></td>
+    <td class="rowodd" valign="top" width="2000">Fixed some other bugs for compatibility with supertab.vim and 'set expandtab' and added check to ensure snippets are not loaded twice.<br><br>I also changed the &quot;Snip&quot; command to &quot;Snipp&quot; to maintain compatibility with <a href="/scripts/script.php?script_id=244">vimscript #244</a> (imaps.vim). Unfortunately this breaks backward compatibility; to update any snippets you have added, just execute this regex on the appropriate files: &quot;:%s/exe \(.\)Snip /exe \1Snipp /g&quot;</td>
+</tr>
+<tr>
+        <td class="roweven" valign="top" nowrap><a href="download_script.php?src_id=9961">snipMate.zip</a></td>
+    <td class="roweven" valign="top" nowrap><b>0.6180</b></td>
+    <td class="roweven" valign="top" nowrap><i>2009-02-13</i></td>
+    <td class="roweven" valign="top" nowrap>7.0</td>
+    <td class="roweven" valign="top"><i><a href="/account/profile.php?user_id=16544">Michael Sanders</a></i></td>
+    <td class="roweven" valign="top" width="2000">Added support for 'set expandtab', supertab.vim, and fixed some bugs.</td>
+</tr>
+<tr>
+        <td class="rowodd" valign="top" nowrap><a href="download_script.php?src_id=9952">snipMate.zip</a></td>
+    <td class="rowodd" valign="top" nowrap><b>0.42</b></td>
+    <td class="rowodd" valign="top" nowrap><i>2009-02-11</i></td>
+    <td class="rowodd" valign="top" nowrap>7.0</td>
+    <td class="rowodd" valign="top"><i><a href="/account/profile.php?user_id=16544">Michael Sanders</a></i></td>
+    <td class="rowodd" valign="top" width="2000">Initial upload</td>
+</tr>
+</table>
+<!-- finish off the framework -->
+          </td>
+        </tr>
+      </table>
+    </td>
+
+  </tr>
+</table>
+
+<!-- END OF THE PAGE BODY: BETWEEN HEADER AND FOOTER -->
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" bordercolor="red">
+  <tr><td colspan="4"><img src="/images/spacer.gif" width="1" height="5" alt=""></td></tr>
+  <tr><td colspan="4" bgcolor="#000000"><img src="/images/spacer.gif" height="2" width="1" alt=""></td></tr>
+  <tr><td colspan="4"><img src="/images/spacer.gif" width="1" height="5" alt=""></td></tr>
+  <tr>
+    <td><img src="/images/spacer.gif" width="5" height="1" alt=""></td>
+
+    <td align="left" valign="top"><small>
+      If you have questions or remarks about this site, visit the
+      <a href="http://vimonline.sf.net">vimonline development</a> pages.
+      Please use this site responsibly.
+      <br> 
+      
+      Questions about <a href="http://www.vim.org/about.php">Vim</a> should go
+      to the <a href="http://www.vim.org/maillist.php">maillist</a>.
+      Help Bram <a href="http://iccf-holland.org/">help Uganda</a>.
+      </small>
+	&nbsp;
+	&nbsp;
+
+	<!-- Start of StatCounter Code -->
+	<script type="text/javascript" language="javascript">
+	var sc_project=1417324; 
+	var sc_invisible=1; 
+	var sc_partition=11; 
+	var sc_security="d41633bc"; 
+	</script>
+
+	<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/counter.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c12.statcounter.com/counter.php?sc_project=1417324&java=0&security=d41633bc&invisible=0" alt="free tracking" border="0"></a> </noscript>
+	<!-- End of StatCounter Code -->
+          </td>
+
+    <td align="right" valign="top">
+      		<a href="http://sourceforge.net/projects/vim" rel="nofollow"><img src="http://sflogo.sourceforge.net/sflogo.php?group_id=8&type=1" width="88" height="31" border="0" alt="SourceForge.net Logo" /></a>
+    </td>
+
+    <td><img src="/images/spacer.gif" width="5" height="1" alt=""></td>
+  </tr>
+
+    
+  <tr><td colspan="4"><img src="/images/spacer.gif" width="1" height="5" alt=""></td>
+  
+  </tr>
+</table>
+
+<!-- for Google +1 button -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+</body>
+</html>
+

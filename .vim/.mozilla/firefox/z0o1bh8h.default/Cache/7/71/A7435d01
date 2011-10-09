@@ -1,0 +1,406 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+  <link rel="Stylesheet" type="text/css" href="/css/style.css" >
+  <title>scripts : vim online</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <meta name="KEYWORDS" content="Vim, Vi IMproved, text editor, home, documentation, tips, scripts, news">
+  <link rel="shortcut icon" type="image/x-icon" href="/images/vim_shortcut.ico">
+  <link rel="alternate" type="application/atom+xml" title="scripts (Atom 1.0)" href="http://feed43.com/vim-scripts.xml" />
+</head>
+
+<body topmargin="0" leftmargin="0" marginheight="0" marginwidth="0" bgcolor="#ffffff"> 
+
+<!-- HEADER, SPONSOR IMAGE, VIM IMAGE AND BOOK AD -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0" bordercolor="red">
+  <tr>
+    <td colspan="4" class="lightbg"><img src="/images/spacer.gif" width="1" height="5" alt=""></td>
+  </tr>
+  <tr>
+  <td class="lightbg">&nbsp;&nbsp;&nbsp;</td>
+  <td class="lightbg" align="left"><a href="/sponsor/index.php"><img src="/images/sponsorvim.gif" alt="sponsor Vim development" border="0"></a></td>
+    <td class="lightbg" align="center"><a href="/index.php"><img src="/images/vim_header.gif" border="0" alt="Vim logo"></a></td>
+    <td class="lightbg" align="right"><a href="http://iccf-holland.org/click5.html"><img src="/images/buyhelplearn.gif" alt="Vim Book Ad" border="0"></a></td>
+  </tr>
+  <tr>
+    <td colspan="4" class="lightbg"><img src="/images/spacer.gif" width="1" height="5" alt=""></td>
+  </tr>
+  <tr>
+    <td colspan="4" class="darkbg"><img src="/images/spacer.gif" width="1" height="10" alt=""></td>
+  </tr>
+</table>
+<!-- THE PAGE BODY: BETWEEN HEADER AND FOOTER -->
+
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+  <col width="180">
+  <col width="1">
+
+  <tr valign="top">
+    <td class="sidebar">
+      <table width="180" cellpadding="4" cellspacing="0" border="0">
+        <tr valign="top">
+          <td class="sidebar">
+
+<!-- INCLUDE THE PAGE NAVIGATION -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0" bordercolor="red">
+    <tr>
+        <td><small>not logged in (<a href="/login.php">login</a>)</small></td>
+    </tr>
+    <tr><td>
+<small>&nbsp;</small>
+<form action="http://www.google.com/cse" id="cse-search-box">
+  <div>
+    <input type="hidden" name="cx" value="partner-pub-3005259998294962:bvyni59kjr1" />
+    <input type="hidden" name="ie" value="ISO-8859-1" />
+    <input type="text" name="q" size="20" />
+    <br>
+    <input type="submit" name="sa" value="Search" />
+  </div>
+</form>
+<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en"></script>
+    </td></tr>
+    <tr>
+        <td><img src="/images/spacer.gif" alt="" border="0" width="1" height="1"></td>
+    </tr>
+    <tr>
+        <td class="darkbg"><img src="/images/spacer.gif" alt='' border="0" height="3"></td>
+    </tr>
+    <tr>
+        <td><img src="/images/spacer.gif" alt="" border="0" width="1" height="2"></td>
+    </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/index.php">Home</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/search.php">Advanced search</a></td>
+        </tr>
+    <tr>
+        <td><img src="/images/spacer.gif" alt="" border="0" width="1" height="7"></td>
+    </tr>
+    <tr>
+        <td class="checker"><img src="/images/spacer.gif" alt='' border="0" height="1"></td>
+    </tr>
+    <tr>
+        <td><img src="/images/spacer.gif" alt="" border="0" width="1" height="7"></td>
+    </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/about.php">About Vim</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/community.php">Community</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/news/news.php">News</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/sponsor/index.php">Sponsoring</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/trivia.php">Trivia</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/docs.php">Documentation</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/download.php">Download</a></td>
+        </tr>
+    <tr>
+        <td><img src="/images/spacer.gif" alt="" border="0" width="1" height="7"></td>
+    </tr>
+    <tr>
+        <td class="checker"><img src="/images/spacer.gif" alt='' border="0" height="1"></td>
+    </tr>
+    <tr>
+        <td><img src="/images/spacer.gif" alt="" border="0" width="1" height="7"></td>
+    </tr>
+        <tr>
+            <td class="sidebarheader">Scripts</td>
+        </tr>
+        <tr>
+            <td class="sidebarheader">
+                &nbsp;&nbsp;&nbsp;&nbsp;<a href="/scripts/script_search_results.php">Browse all</a>
+            </td>
+        </tr>
+        <tr>
+            <td class="sidebarheader">
+                &nbsp;&nbsp;&nbsp;&nbsp;<a href="/scripts/add_script.php">Add Script</a>
+            </td>
+        </tr>
+        <tr>
+            <td class="sidebarheader">
+                &nbsp;&nbsp;&nbsp;&nbsp;<a href="/karma.php">Karma</a>
+            </td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/tips/index.php">Tips</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/account/index.php">My Account</a></td>
+        </tr>
+    <tr>
+        <td><img src="/images/spacer.gif" alt="" border="0" width="1" height="7"></td>
+    </tr>
+    <tr>
+        <td class="checker"><img src="/images/spacer.gif" alt='' border="0" height="1"></td>
+    </tr>
+    <tr>
+        <td><img src="/images/spacer.gif" alt="" border="0" width="1" height="7"></td>
+    </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/huh.php">Site Help</a></td>
+        </tr>
+</table>
+<br>
+<g:plusone></g:plusone>
+
+            <table width="172" cellpadding="0" cellspacing="0" border="0">
+              <tr><td><img src="/images/spacer.gif" alt="" border="0" width="1" height="8"></td></tr>
+              <tr><td class="darkbg"><img src="/images/spacer.gif" width="1" height="3" alt=""></td></tr>
+            </table>
+            <br>
+
+<!-- INCLUDE THE PAGE SIDEBAR TEXT -->
+<span class="sidebarheader">What are scripts?</span>
+<p>
+vim online allows users to upload scripts that help enhance vim.
+There are many types of scripts: syntax scripts enable syntax higlighting, color scheme
+scripts set the theme of your vim colors, indent scripts allow for advanced indenting
+functionality and utility scripts can add a wide range of features from spell checking
+to IDE macros.
+</p>
+<br>
+<span class="sidebarheader">How do I install scripts?</span>
+<p>
+Utility scripts need to be "sourced" from your vimrc (:help source) or in 6.0 you
+can just add the scripts to the plugin directory. Syntax files should be saved in
+the syntax directory. 6.0 supports indent scripts which should be saved in the indent
+directory and color scheme scripts which need to be sourced from your vimrc.
+
+          </td>
+        </tr>
+      </table>
+    </td>
+
+    <td class="darkbg"><img src="/images/spacer.gif" width="1" height="1" border="0" alt=""><br></td>
+    <td>
+      <table width="100%" cellpadding="10" cellspacing="0" border="0" bordercolor="red">
+        <tr>
+          <td valign="top">
+
+<span class="txth1">Vim Scripts</span> (<a href="add_script.php">add script</a>)
+<p>
+<!-- placeholder for top rated scripts -->
+<i><b>script: </b> Middle English, from Latin scriptum, things written, a plan of action
+</i>
+</p>
+
+<hr noshade size="1" color="#000000">
+<br>
+<span class="txth1">Recent Script Updates</span> (<a href="script_search_results.php?order_by=creation_date&direction=descending">browse all</a> | <a href="../search.php">search</a>)
+
+<table cellpadding="0" cellspacing="0" border="0">
+<tr>
+    <td class="newsdate" nowrap valign="top">[2011-10-09]</td>
+    <td>&nbsp;<a href="script.php?script_id=3767">MapFinder</a> : Find Maps with vim patterns matching rhs.</td>
+</tr>
+<tr>
+    <td><img src="/images/spacer.gif" width="1" height="1" alt=""></td>
+    <td>(1) Initial upload - <i>Marcin Szamotulski</i></td>
+</tr>
+<tr>
+    <td class="newsdate" nowrap valign="top">[2011-10-08]</td>
+    <td>&nbsp;<a href="script.php?script_id=3766">vimroom.vim</a> : WriteRoom in Vim.</td>
+</tr>
+<tr>
+    <td><img src="/images/spacer.gif" width="1" height="1" alt=""></td>
+    <td>(v0.7) Initial upload - <i>Mike West</i></td>
+</tr>
+<tr>
+    <td class="newsdate" nowrap valign="top">[2011-10-08]</td>
+    <td>&nbsp;<a href="script.php?script_id=3723">SimpylFold</a> : No-BS Python code folding</td>
+</tr>
+<tr>
+    <td><img src="/images/spacer.gif" width="1" height="1" alt=""></td>
+    <td>(1.0.1) Old version was uploaded incorrectly.
+
+Also fixed folding of functions and classes with mutli-line signatures. - <i>Taylor Hedberg</i></td>
+</tr>
+<tr>
+    <td class="newsdate" nowrap valign="top">[2011-10-08]</td>
+    <td>&nbsp;<a href="script.php?script_id=3647">VimLite</a> : Make vim as a C/C++ IDE inspired by CodeLite.</td>
+</tr>
+<tr>
+    <td><img src="/images/spacer.gif" width="1" height="1" alt=""></td>
+    <td>(0.8.5) NOTE: The '~/.vimlite/config/TagsSettings.conf' file of this version is not compatible with the older one, please backup and delete it.
+
+- VLWorkspace: Fixed 'Workspace Build Configuration' refresh issue.
+- VLWorkspace: Fixed global c compile option issue.
+- VLWorkspace: Improved popup menu.
+- VLWorkspace: Add command 'VLWSwapSourceHeader' to toggle editing source and header.
+- VLWorkspace: Change workspace file suffix to 'vlworkspace' and project file suffix to 'vlproject'.
+- VLWorkspace: Added 'Batch Build' feature.
+- Omnicpp: Fixed 'defaule: { p-&gt;|'.
+- Omnicpp: Improved 'Types' replacement.
+- OmniCpp: Improved class constructor calltips. eg. A::A() : m_data(|) {
+- Others: Improved OmniCpp and vimdialog, fixed minor bugs. - <i>fanhe  </i></td>
+</tr>
+<tr>
+    <td class="newsdate" nowrap valign="top">[2011-10-08]</td>
+    <td>&nbsp;<a href="script.php?script_id=1735">echofunc.vim</a> : Echo the function declaration in the command line for C/C++.</td>
+</tr>
+<tr>
+    <td><img src="/images/spacer.gif" width="1" height="1" alt=""></td>
+    <td>(1.3) Add Mac support.&nbsp;&nbsp;Add a new feature &quot;PathMapping&quot; (Zhao Cai).&nbsp;&nbsp;Some bug fixes. - <i>Ming Bai</i></td>
+</tr>
+<tr>
+    <td class="newsdate" nowrap valign="top">[2011-10-08]</td>
+    <td>&nbsp;<a href="script.php?script_id=3711">chinachess.vim</a> : &#29992;&#26469;&#27983;&#35272;&#20013;&#22269;&#35937;&#26827;&#26827;&#35889;</td>
+</tr>
+<tr>
+    <td><img src="/images/spacer.gif" width="1" height="1" alt=""></td>
+    <td>(1.3) 1.&#25913;&#21464;&#32972;&#26223;&#39068;&#33394;&#65292;&#21644;&#26827;&#23376;&#26356;&#23481;&#26131;&#21306;&#20998;
+2.&#22686;&#21152;&#19978;&#19979;&#24038;&#21491;&#31661;&#22836;&#21160;&#20316;&#26144;&#23556;&#65292;&#25353;&#19978;&#19979;&#24038;&#21491;&#65292;&#21487;&#20197;&#22312;&#26827;&#30424;&#30340;&#26684;&#23376;&#19978;&#31227;&#21160;
+3.&#22686;&#21152;&#31354;&#26684;&#21644;&#22238;&#36710;&#26144;&#23556;&#65292;&#29992;&#19978;&#19979;&#24038;&#21491;&#31227;&#21160;&#20809;&#26631;&#21040;&#26827;&#23376;&#19978;&#65292;&#25353;&#31354;&#26684;&#34920;&#31034;&#36873;&#20013;&#65292;&#28982;&#21518;&#20877;&#31227;&#21160;&#20809;&#26631;&#21040;&#24819;&#35201;&#21435;&#30340;&#22320;&#26041;&#65292;&#25353;&#22238;&#36710;&#65292;&#26827;&#23376;&#21487;&#20197;&#31227;&#21160;
+4.&#22686;&#21152;&#26144;&#23556;&lt;leader&gt;q&nbsp;&nbsp;&#65306;&#36864;&#20986;
+5.&#20462;&#25913;&#20102;&#19968;&#20123;&#23567;bug - <i>J ping</i></td>
+</tr>
+<tr>
+    <td class="newsdate" nowrap valign="top">[2011-10-08]</td>
+    <td>&nbsp;<a href="script.php?script_id=3716">fuzzee.vim</a> : fuzzee.vim: Fuzzy expansions for :e and :E</td>
+</tr>
+<tr>
+    <td><img src="/images/spacer.gif" width="1" height="1" alt=""></td>
+    <td>(0.5) Add :FB command to navigate open or hidden buffers
+Fixes when globbing for the home directory
+Defer an unnecessary glob - <i>Matt Sacks</i></td>
+</tr>
+<tr>
+    <td class="newsdate" nowrap valign="top">[2011-10-08]</td>
+    <td>&nbsp;<a href="script.php?script_id=162">auctex.vim</a> : macros for latex</td>
+</tr>
+<tr>
+    <td><img src="/images/spacer.gif" width="1" height="1" alt=""></td>
+    <td>(2.2.7) Changed mathbf and mathcal macros to switch the capitalization of the letter.&nbsp;&nbsp;This is because capital letters are more common with these commands, so it saves a keystroke.&nbsp;&nbsp;But if you want&nbsp;&nbsp;a small letter, you can still get it. - <i>Carl Mueller</i></td>
+</tr>
+<tr>
+    <td class="newsdate" nowrap valign="top">[2011-10-07]</td>
+    <td>&nbsp;<a href="script.php?script_id=3765">TagmaTasks</a> : IDE like Task List for Vim buffers.</td>
+</tr>
+<tr>
+    <td><img src="/images/spacer.gif" width="1" height="1" alt=""></td>
+    <td>(0.1) Initial upload - <i>Lorance Stinson</i></td>
+</tr>
+<tr>
+    <td class="newsdate" nowrap valign="top">[2011-10-07]</td>
+    <td>&nbsp;<a href="script.php?script_id=3764">fcitx.vim</a> : keep and restore fcitx state when leaving/re-entering insert mode</td>
+</tr>
+<tr>
+    <td><img src="/images/spacer.gif" width="1" height="1" alt=""></td>
+    <td>(1.0) Initial upload - <i>lilydjwg  </i></td>
+</tr>
+<tr><td colspan="2"><img src="/images/spacer.gif" width="1" height="10" alt=""></td></tr>
+<tr><td colspan="2"><small><b>Displaying 10 of 3747</b> (<a href="script_search_results.php">more</a>)</small></td></tr>
+</table>
+<!-- finish off the framework -->
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td class="darkbg"><img src="/images/spacer.gif" width="1" height="1" border="0" alt=""><br></td>
+
+    <td class="sidebar">
+      <table width="128" cellpadding="4" cellspacing="0" border="0">
+        <tr valign="top">
+          <td class="sidebar">
+
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-3005259998294962";
+/* 120x600, created 7/25/08 */
+google_ad_slot = "7276811434";
+google_ad_width = 120;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+
+	  </td>
+	</tr>
+        <tr valign="top">
+          <td class="sidebar" align='center'>
+             &nbsp;<br>
+	     <a href="http://iccf-holland.org/clickkindle.html"><img src="/images/kindle_125x125.gif" alt="Buy a book, help Uganda, learn Vim"></a>
+	     <br>
+	     <a href="http://iccf-holland.org/click1.html">Buy at Amazon<br>Help Uganda</a>
+          </td>
+        </tr>
+      </table>
+    </td>
+
+  </tr>
+</table>
+
+<!-- END OF THE PAGE BODY: BETWEEN HEADER AND FOOTER -->
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" bordercolor="red">
+  <tr><td colspan="4"><img src="/images/spacer.gif" width="1" height="5" alt=""></td></tr>
+  <tr><td colspan="4" bgcolor="#000000"><img src="/images/spacer.gif" height="2" width="1" alt=""></td></tr>
+  <tr><td colspan="4"><img src="/images/spacer.gif" width="1" height="5" alt=""></td></tr>
+  <tr>
+    <td><img src="/images/spacer.gif" width="5" height="1" alt=""></td>
+
+    <td align="left" valign="top"><small>
+      If you have questions or remarks about this site, visit the
+      <a href="http://vimonline.sf.net">vimonline development</a> pages.
+      Please use this site responsibly.
+      <br> 
+      
+      Questions about <a href="http://www.vim.org/about.php">Vim</a> should go
+      to the <a href="http://www.vim.org/maillist.php">maillist</a>.
+      Help Bram <a href="http://iccf-holland.org/">help Uganda</a>.
+      </small>
+	&nbsp;
+	&nbsp;
+
+	<!-- Start of StatCounter Code -->
+	<script type="text/javascript" language="javascript">
+	var sc_project=1417324; 
+	var sc_invisible=1; 
+	var sc_partition=11; 
+	var sc_security="d41633bc"; 
+	</script>
+
+	<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/counter.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c12.statcounter.com/counter.php?sc_project=1417324&java=0&security=d41633bc&invisible=0" alt="free tracking" border="0"></a> </noscript>
+	<!-- End of StatCounter Code -->
+          </td>
+
+    <td align="right" valign="top">
+      		<a href="http://sourceforge.net/projects/vim" rel="nofollow"><img src="http://sflogo.sourceforge.net/sflogo.php?group_id=8&type=1" width="88" height="31" border="0" alt="SourceForge.net Logo" /></a>
+    </td>
+
+    <td><img src="/images/spacer.gif" width="5" height="1" alt=""></td>
+  </tr>
+
+    
+  <tr><td colspan="4"><img src="/images/spacer.gif" width="1" height="5" alt=""></td>
+  
+  </tr>
+</table>
+
+<!-- for Google +1 button -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+</body>
+</html>
+
+

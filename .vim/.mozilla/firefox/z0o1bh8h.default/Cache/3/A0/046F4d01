@@ -1,0 +1,999 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+  <link rel="Stylesheet" type="text/css" href="/css/style.css" >
+  <title>download : vim online</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <meta name="KEYWORDS" content="Vim, Vi IMproved, text editor, home, documentation, tips, scripts, news">
+  <link rel="shortcut icon" type="image/x-icon" href="/images/vim_shortcut.ico">
+</head>
+
+<body topmargin="0" leftmargin="0" marginheight="0" marginwidth="0" bgcolor="#ffffff"> 
+
+<!-- HEADER, SPONSOR IMAGE, VIM IMAGE AND BOOK AD -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0" bordercolor="red">
+  <tr>
+    <td colspan="4" class="lightbg"><img src="/images/spacer.gif" width="1" height="5" alt=""></td>
+  </tr>
+  <tr>
+  <td class="lightbg">&nbsp;&nbsp;&nbsp;</td>
+  <td class="lightbg" align="left"><a href="/sponsor/index.php"><img src="/images/sponsorvim.gif" alt="sponsor Vim development" border="0"></a></td>
+    <td class="lightbg" align="center"><a href="/index.php"><img src="/images/vim_header.gif" border="0" alt="Vim logo"></a></td>
+    <td class="lightbg" align="right"><a href="http://iccf-holland.org/click5.html"><img src="/images/buyhelplearn.gif" alt="Vim Book Ad" border="0"></a></td>
+  </tr>
+  <tr>
+    <td colspan="4" class="lightbg"><img src="/images/spacer.gif" width="1" height="5" alt=""></td>
+  </tr>
+  <tr>
+    <td colspan="4" class="darkbg"><img src="/images/spacer.gif" width="1" height="10" alt=""></td>
+  </tr>
+</table>
+<!-- THE PAGE BODY: BETWEEN HEADER AND FOOTER -->
+
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+  <col width="180">
+  <col width="1">
+
+  <tr valign="top">
+    <td class="sidebar">
+      <table width="180" cellpadding="4" cellspacing="0" border="0">
+        <tr valign="top">
+          <td class="sidebar">
+
+<!-- INCLUDE THE PAGE NAVIGATION -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0" bordercolor="red">
+    <tr>
+        <td><small>not logged in (<a href="/login.php">login</a>)</small></td>
+    </tr>
+    <tr><td>
+<small>&nbsp;</small>
+<form action="http://www.google.com/cse" id="cse-search-box">
+  <div>
+    <input type="hidden" name="cx" value="partner-pub-3005259998294962:bvyni59kjr1" />
+    <input type="hidden" name="ie" value="ISO-8859-1" />
+    <input type="text" name="q" size="20" />
+    <br>
+    <input type="submit" name="sa" value="Search" />
+  </div>
+</form>
+<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en"></script>
+    </td></tr>
+    <tr>
+        <td><img src="/images/spacer.gif" alt="" border="0" width="1" height="1"></td>
+    </tr>
+    <tr>
+        <td class="darkbg"><img src="/images/spacer.gif" alt='' border="0" height="3"></td>
+    </tr>
+    <tr>
+        <td><img src="/images/spacer.gif" alt="" border="0" width="1" height="2"></td>
+    </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/index.php">Home</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/search.php">Advanced search</a></td>
+        </tr>
+    <tr>
+        <td><img src="/images/spacer.gif" alt="" border="0" width="1" height="7"></td>
+    </tr>
+    <tr>
+        <td class="checker"><img src="/images/spacer.gif" alt='' border="0" height="1"></td>
+    </tr>
+    <tr>
+        <td><img src="/images/spacer.gif" alt="" border="0" width="1" height="7"></td>
+    </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/about.php">About Vim</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/community.php">Community</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/news/news.php">News</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/sponsor/index.php">Sponsoring</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/trivia.php">Trivia</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/docs.php">Documentation</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader">Download</td>
+        </tr>
+        <tr>
+            <td class="sidebarheader">
+                &nbsp;&nbsp;&nbsp;&nbsp;<a href="/mirrors.php">List of Mirrors</a>
+            </td>
+        </tr>
+        <tr>
+            <td class="sidebarheader">
+                &nbsp;&nbsp;&nbsp;&nbsp;<a href="/sources.php">Sources</a>
+            </td>
+        </tr>
+        <tr>
+            <td class="sidebarheader">
+                &nbsp;&nbsp;&nbsp;&nbsp;<a href="/mercurial.php">Vim from Mercurial</a>
+            </td>
+        </tr>
+        <tr>
+            <td class="sidebarheader">
+                &nbsp;&nbsp;&nbsp;&nbsp;<a href="/cvs.php">Vim from CVS</a>
+            </td>
+        </tr>
+        <tr>
+            <td class="sidebarheader">
+                &nbsp;&nbsp;&nbsp;&nbsp;<a href="/subversion.php">Vim from SVN</a>
+            </td>
+        </tr>
+        <tr>
+            <td class="sidebarheader">
+                &nbsp;&nbsp;&nbsp;&nbsp;<a href="/patches.php">Patches</a>
+            </td>
+        </tr>
+        <tr>
+            <td class="sidebarheader">
+                &nbsp;&nbsp;&nbsp;&nbsp;<a href="/develop.php">Development</a>
+            </td>
+        </tr>
+        <tr>
+            <td class="sidebarheader">
+                &nbsp;&nbsp;&nbsp;&nbsp;<a href="/runtime.php">Runtime files</a>
+            </td>
+        </tr>
+        <tr>
+            <td class="sidebarheader">
+                &nbsp;&nbsp;&nbsp;&nbsp;<a href="/vimscriptlinks.php">Script links</a>
+            </td>
+        </tr>
+        <tr>
+            <td class="sidebarheader">
+                &nbsp;&nbsp;&nbsp;&nbsp;<a href="/translations.php">Translations</a>
+            </td>
+        </tr>
+    <tr>
+        <td><img src="/images/spacer.gif" alt="" border="0" width="1" height="7"></td>
+    </tr>
+    <tr>
+        <td class="checker"><img src="/images/spacer.gif" alt='' border="0" height="1"></td>
+    </tr>
+    <tr>
+        <td><img src="/images/spacer.gif" alt="" border="0" width="1" height="7"></td>
+    </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/scripts/index.php">Scripts</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/tips/index.php">Tips</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/account/index.php">My Account</a></td>
+        </tr>
+    <tr>
+        <td><img src="/images/spacer.gif" alt="" border="0" width="1" height="7"></td>
+    </tr>
+    <tr>
+        <td class="checker"><img src="/images/spacer.gif" alt='' border="0" height="1"></td>
+    </tr>
+    <tr>
+        <td><img src="/images/spacer.gif" alt="" border="0" width="1" height="7"></td>
+    </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/huh.php">Site Help</a></td>
+        </tr>
+</table>
+<br>
+<g:plusone></g:plusone>
+
+            <table width="172" cellpadding="0" cellspacing="0" border="0">
+              <tr><td><img src="/images/spacer.gif" alt="" border="0" width="1" height="8"></td></tr>
+              <tr><td class="darkbg"><img src="/images/spacer.gif" width="1" height="3" alt=""></td></tr>
+            </table>
+            <br>
+
+<!-- INCLUDE THE PAGE SIDEBAR TEXT -->
+<!--
+<center>
+<span class="sidebarheader">Join the Vim tutorial at</span>
+<p>
+<a href="http://www.sane.nl/"><img src="images/SANE2004-124x84.jpg" border="0" width="124" height="84"></a>
+<p>
+September 27, Amsterdam
+</center>
+-->
+
+<br><br><br>
+
+<span class="sidebarheader">Note</span>
+<p>
+Vim 7.3 has been released.
+Many people have helped testing it and it appears to work very well.
+Nevertheless, the usual disclaimers apply:
+We take no responsibility for any trouble that is caused by Vim.
+</p>
+<p>
+If you find a problem, please
+report it to bugs AT vim DOT org.
+</p>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=1417516; 
+var sc_invisible=1; 
+var sc_partition=11; 
+var sc_security="b6dc53fe"; 
+</script>
+
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/counter.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c12.statcounter.com/counter.php?sc_project=1417516&java=0&security=b6dc53fe&invisible=1" alt="hidden hit counter" border="0"></a> </noscript>
+<!-- End of StatCounter Code -->
+
+          </td>
+        </tr>
+      </table>
+    </td>
+
+    <td class="darkbg"><img src="/images/spacer.gif" width="1" height="1" border="0" alt=""><br></td>
+    <td>
+      <table width="100%" cellpadding="10" cellspacing="0" border="0" bordercolor="red">
+        <tr>
+          <td valign="top">
+
+<A NAME="top"></A>
+<h1>Downloading Vim</h1>
+
+Vim is available for many different systems and there are several versions.
+This page will help you decide what to download.
+<p>
+<table cellpadding="4" border="0">
+<tr>
+<td>Systems</td>
+<td>
+<ul>
+	<li>
+	<A HREF="#unix">Unix</A>
+	</li>
+	<li>
+	<A HREF="#pc">PC: MS-DOS and MS-Windows</A>
+	</li>
+	<li>
+	<A HREF="#amiga">Amiga</A>
+	</li>
+	<li>
+	<A HREF="#os2">OS/2</A>
+	</li>
+	<li>
+	<A HREF="#mac">Macintosh</A>
+	</li>
+	<li>
+	<A HREF="#others">Others</A>
+	</li>
+</ul>
+</td>
+</tr>
+
+<tr>
+<td><a href="/mirrors.php">Mirrors</a></td>
+<td>Alternative sites to download Vim files from.
+<!--
+(<a href="http://www.nluug.nl/ftpserver/status.html">main ftp server status</a>)</td>
+-->
+</tr>
+
+<tr>
+<td><a href="/sources.php">Sources</a></td>
+<td>Build Vim yourself and/or make changes.</td>
+</tr>
+
+<tr>
+<td><a href="/mercurial.php">Mercurial</a></td>
+<td>Obtain Vim sources with a Mercurial client (recommended).</td>
+</tr>
+
+<tr>
+<td><a href="/patches.php">Patches</a></td>
+<td>Include the latest improvements (requires sources and rebuilding).</td>
+</tr>
+
+<tr>
+<td><a href="/runtime.php">Runtime</a></td>
+<td>Get the latest syntax files, documentation, etc..</td>
+</tr>
+
+<tr>
+<td><a href="/vimscriptlinks.php">Script links</a></td>
+<td>Links to individual syntax, indent, color, compiler and ftplugin scripts.</td>
+</tr>
+
+<tr>
+<td><a href="/translations.php">Translations</a></td>
+<td>Non-English documentation packages.</td>
+</tr>
+
+</table>
+<p>
+
+Versions before 7.3 can also be obtained with
+<a href="/subversion.php">Subversion</a>
+and
+<a href="/cvs.php">CVS</a>.
+
+<h1>Version</h1>
+
+Vim 7.3 is the latest stable version.  It is highly recommended, many bugs have 
+been fixed since 7.2 and earlier.
+If you have a problem with it (e.g.,
+when it's too big for your system), you could try version 6.4 or 5.8 instead.
+<p>
+To avoid having to update this page for every new version, there are
+links to the directories.  From there select the files you want to download.
+In the file names ## stands for the version number.  For example,
+<b>vim##src.zip</b>
+with version 7.3 is <b>vim73src.zip</b> and
+<b>vim-##-src.tar.gz</b> for version 7.3
+is <b>vim-7.3-src.tar.gz</b>.
+Links are provided for quick access to the latest version.
+
+<hr noshade size="1" color="#000000">
+
+<A NAME="unix"></A>
+<h1>Unix</h1>
+The best way to install Vim on Unix is to use the sources.  This requires a
+compiler and its support files.  Compiling Vim isn't difficult at all.
+You can simply type "make install" when you are happy with the default
+features.  Edit the Makefile in the "src" directory to select specific
+features.
+<p>
+You need to download at the sources and the runtime files.
+And apply all the latest patches.
+For Vim 6 up to 7.2 you can optionally get the "lang" archive, which adds 
+translated messages and menus. For 7.3 this is included with the runtime files.
+<dl>
+<dt><b>Using Mercurial</b></dt>
+<dd>
+This is the simplest and most efficient way to obtain the latest version, 
+including all patches.  This requires the "hg" command.
+<br>
+The explanations are on this page:
+<a href="/mercurial.php">Mercurial</a>
+<p>
+Summary:
+<pre class='example'>
+hg clone https://vim.googlecode.com/hg/ vim
+cd vim/src
+make
+</pre>
+</dd>
+
+<dt><b>Using Aap</b></dt>
+<dd>
+Aap is a new tool that does all the work of downloading and patching for you.
+You download one file, called a recipe, and "aap install" does all the work.
+To later update to the latest version of Vim you do not need to download
+anything manually, just use the command "aap update".
+<p>
+The detailed explanation can be found
+<a href="http://www.a-a-p.org/ports.html">here</a>.
+This does require Python and installing Aap.  Please report problems to Bram AT
+a-a-p.org.
+</dd>
+
+<dt><b>version 7.x</b></dt>
+<dd>
+There is one big file to download that contains almost everything.
+It is found in
+<A HREF="ftp://ftp.vim.org/pub/vim/unix">the unix directory</A>:
+	<table cellpadding="4" border="0">
+	<tr>
+	<td>The runtime and source files together:</td> <td>vim-##.tar.bz2</td><td><A HREF="ftp://ftp.vim.org/pub/vim/unix/vim-7.3.tar.bz2">vim-7.3.tar.bz2</A></td>
+	</tr>
+	</table>
+If you would like to use translated messages and menus on Vim 7.2 and earlier, 
+get an additional archive from
+<A HREF="ftp://ftp.vim.org/pub/vim/extra">the extra directory</A>:
+	<table cellpadding="4" border="0">
+	<tr>
+	<td>The language files.</td> <td>vim-##-lang.tar.gz</td><td><A HREF="ftp://ftp.vim.org/pub/vim/extra/vim-7.2-lang.tar.gz">vim-7.2-lang.tar.gz</A></td>
+	</tr>
+	</table>
+</dd>
+<dt><b>version 6.x</b></dt>
+<dd>
+You have a choice: Either get the one big archive <b>OR</b> get four smaller
+ones (that each fit on a floppy disk).  They are all in
+<A HREF="ftp://ftp.vim.org/pub/vim/unix">the unix directory</A>:
+	<table cellpadding="4" border="0">
+	<tr>
+	<td>The runtime and source files together:</td> <td>vim-##.tar.bz2</td><td><A HREF="ftp://ftp.vim.org/pub/vim/unix/vim-6.4.tar.bz2">vim-6.4.tar.bz2</A></td>
+	</tr>
+	<tr>
+	<td>The runtime files part 1:</td> <td>vim-##-rt1.tar.gz</td><td><A HREF="ftp://ftp.vim.org/pub/vim/unix/vim-6.4-rt1.tar.gz">vim-6.4-rt1.tar.gz</A></td>
+	</tr>
+	<tr>
+	<td>The runtime files part 2:</td> <td>vim-##-rt2.tar.gz</td><td><A HREF="ftp://ftp.vim.org/pub/vim/unix/vim-6.4-rt2.tar.gz">vim-6.4-rt2.tar.gz</A></td>
+	</tr>
+	<tr>
+	<td>The source files part 1:</td> <td>vim-##-src1.tar.gz</td><td><A HREF="ftp://ftp.vim.org/pub/vim/unix/vim-6.4-src1.tar.gz">vim-6.4-src1.tar.gz</A></td>
+	</tr>
+	<tr>
+	<td>The source files part 2.</td> <td>vim-##-src2.tar.gz</td><td><A HREF="ftp://ftp.vim.org/pub/vim/unix/vim-6.4-src2.tar.gz">vim-6.4-src2.tar.gz</A></td>
+	</tr>
+	</table>
+If you would like to use translated messages and menus, get an additional
+archive from
+<A HREF="ftp://ftp.vim.org/pub/vim/extra">the extra directory</A>:
+	<table cellpadding="4" border="0">
+	<tr>
+	<td>The language files.</td> <td>vim-##-lang.tar.gz</td><td><A HREF="ftp://ftp.vim.org/pub/vim/extra/vim-6.4-lang.tar.gz">vim-6.4-lang.tar.gz</A></td>
+	</tr>
+	</table>
+</dd>
+<dt><b>version 5.x</b></dt>
+<dd>
+There are two files you should both get from
+<A HREF="ftp://ftp.vim.org/pub/vim/unix">the unix directory</A>:
+	<table cellpadding="4" border="0">
+	<tr>
+	<td>The runtime files:</td> <td>vim-##-rt.tar.gz</td><td><A HREF="ftp://ftp.vim.org/pub/vim/unix/vim-5.8-rt.tar.gz">vim-5.8-rt.tar.gz</A></td>
+	</tr>
+	<tr>
+	<td>The source files:</td> <td>vim-##-src.tar.gz</td><td><A HREF="ftp://ftp.vim.org/pub/vim/unix/vim-5.8-src.tar.gz">vim-5.8-src.tar.gz</A></td>
+	</tr>
+	</table>
+</dd>
+</dl>
+The files ending in ".tar.gz" are tar archives that are compressed with gzip.
+Unpack them with <B>tar -xzf <I>filename</I></B>.
+<br>
+The single big file ending in ".tar.bz2" is a tar archive compressed with
+bzip2.  Uncompress and unpack it with
+<B>bunzip2 -c <I>filename</I> | tar -xf -</B>.
+<br>
+All archives should be unpacked in the same directory.
+<p>
+If you can't compile yourself or don't want to, look at the site of the
+supplier of your Unix version for a packaged Vim executable.  For Linux
+distributions and FreeBSD these are often available shortly after a new Vim
+version has been released.  But you can't change the features then.
+<UL>
+<LI>
+<B>Debian</B> packages are available at:
+<A HREF="http://packages.debian.org/vim">http://packages.debian.org/vim</A>.
+</LI>
+<LI>
+<B>Sun Solaris</B> Vim is included in the Companion Software:
+<A HREF="http://wwws.sun.com/software/solaris/freeware/">http://wwws.sun.com/software/solaris/freeware/</A>.
+<BR>
+Vim for other Sun systems can be found at
+<A HREF="http://sunfreeware.com/">http://sunfreeware.com/</a>.
+</LI>
+<LI>
+<B>HPUX</B> with GTK GUI for various HPUX versions:
+<A HREF="http://hpux.its.tudelft.nl/hppd/hpux/Editors/vim-6.2/">http://hpux.its.tudelft.nl/hppd/hpux/Editors/vim-6.2/</A> or
+<A HREF="http://hpux.connect.org.uk/hppd/hpux/Editors/vim-6.2/">http://hpux.connect.org.uk/hppd/hpux/Editors/vim-6.2/</A> (note that the remark about the GNU GPL is wrong)
+</LI>
+</UL>
+
+<p>
+<A HREF="#top">TOP</A>
+
+<hr noshade size="1" color="#000000">
+
+<A NAME="pc"></A>
+<h1>PC: MS-DOS and MS-Windows</h1>
+For modern MS-Windows systems (starting with XP) you can simply use the 
+executable installer:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="ftp://ftp.vim.org/pub/vim/pc/gvim73_46.exe">gvim73_46.exe</A><br>
+It includes GUI and console versions, for 32 bit and 64 bit systems.
+You can select what you want to install and includes an uninstaller.
+<p>
+Since there are so many different versions of MS operating systems, there are
+several versions of Vim for them.
+<br>For Vim 5.x, Vim 6.x and Vim 7 look in
+<A HREF="ftp://ftp.vim.org/pub/vim/pc">the pc directory</A>.
+<dl>
+<dt><B>Self-installing executable</B>&nbsp;&nbsp;&nbsp;gvim##.exe &nbsp;&nbsp;&nbsp;<A HREF="ftp://ftp.vim.org/pub/vim/pc/gvim73_46.exe">gvim73_46.exe</A></dt>
+<dd>
+For Vim 6 and later.  This includes a GUI version
+of Vim - with many features and OLE support - and all the runtime files.
+It works well on MS-Windows 95/98/ME/NT/2000/XP/Vista/7.
+Use this if you have enough disk space and memory.  It's the simplest way to
+start using Vim on the PC.  The installer allows you to skip the parts you
+don't want.
+<BR>
+For Vim 6.3 and later it also includes a console version, both for MS-Windows 
+95/98/ME and MS-Windows NT/2000/XP/Vista/7.  The installer automatically 
+selects the right one.
+<BR>
+For the latest version with all patches included see <a href="#cream">Cream</a>
+below.  These versions are unofficial, but the download number
+is high and complaints are few.
+</dd>
+</dl>
+<dl>
+<dt><b>Win64</b></dt>
+<dd>
+Native 64-bit binaries for MS-Windows can be found at
+<A HREF="http://code.google.com/p/vim-win3264/">http://code.google.com/p/vim-win3264/</A>.
+The Win32 binaries should run too, but the 64 bit version has a few minor 
+advantages (see the web page at the link).
+</dd>
+</dl>
+<dl>
+<dt><B>Runtime files</B>&nbsp;&nbsp;&nbsp;vim##rt.zip &nbsp;&nbsp;&nbsp;<A HREF="ftp://ftp.vim.org/pub/vim/pc/vim73_46rt.zip">vim73_46rt.zip</A></dt>
+<dd>
+For all the following binary versions you need this runtime archive, which
+includes the documentation, syntax files, etc.  Always get this, unless you
+use the self-installing executable.
+</dd>
+</dl>
+<p>
+There are three versions that run as an MS-Windows application.  These provide
+menus, scrollbars and a toolbar.
+<dl>
+<dt><B>GUI executable</B>&nbsp;&nbsp;&nbsp;gvim##.zip &nbsp;&nbsp;&nbsp;<A HREF="ftp://ftp.vim.org/pub/vim/pc/gvim73_46.zip">gvim73_46.zip</A></dt>
+<dd>
+This is the "normal" GUI version.
+</dd>
+<dt><B>OLE GUI executable</B>&nbsp;&nbsp;&nbsp;gvim##ole.zip &nbsp;&nbsp;&nbsp;<A HREF="ftp://ftp.vim.org/pub/vim/pc/gvim73_46ole.zip">gvim73_46ole.zip</A></dt>
+<dd>
+A GUI version with OLE support.  This offers a few extra features,
+such as integration with Visual Developer Studio.  But it uses quite a bit
+more memory.
+</dd>
+<dt><B>Win32s GUI executable</B>&nbsp;&nbsp;&nbsp;gvim##_s.zip &nbsp;&nbsp;&nbsp;<A HREF="ftp://ftp.vim.org/pub/vim/pc/gvim73_46_s.zip">gvim73_46_s.zip</A></dt>
+<dd>
+GUI version for Windows 3.1 with win32s support. (Not available for Vim 6.2 and 6.3)
+<br>
+A true Windows 3.1 version can be found here:
+<A HREF="http://www.bulbous.freeserve.co.uk/vim16.html">http://www.bulbous.freeserve.co.uk/vim16.html</A>
+</dd>
+</dl>
+There are three versions that run on MS-DOS or in a console window in
+MS-Windows:
+<dl>
+<dt><B>16 bit DOS executable</B>&nbsp;&nbsp;&nbsp;vim##d16.zip &nbsp;&nbsp;&nbsp;<A HREF="ftp://ftp.vim.org/pub/vim/pc/vim71d16.zip">vim71d16.zip</A></dt>
+<dd>
+The 16 bit DOS version is the only one that runs on old MS-DOS systems.  Only
+use this if you are really desparate, because it excludes many useful features
+(such as syntax highlighting and long file names) and quickly runs out of
+memory.<br>
+The last version available is 7.1, 7.2 and 7.3 are too big to fit in the DOS memory 
+model.
+</dd>
+<dt><B>32 bit DOS executable</B>&nbsp;&nbsp;&nbsp;vim##d32.zip &nbsp;&nbsp;&nbsp;<A HREF="ftp://ftp.vim.org/pub/vim/pc/vim73_46d32.zip">vim73_46d32.zip</A></dt>
+<dd>
+The 32 bit DOS version works well on MS-Windows 95/98/ME.  It requires a DPMI
+manager, which needs to be installed on MS-DOS.  MS-Windows already has one.
+It supports long file names, but NOT on MS-Windows NT/2000/XP/Vista/7.  It is 
+compiled with "big" features.
+</dd>
+<dt><B>Win32 console executable</B>&nbsp;&nbsp;&nbsp;vim##w32.zip &nbsp;&nbsp;&nbsp;<A HREF="ftp://ftp.vim.org/pub/vim/pc/vim73_46w32.zip">vim73_46w32.zip</A></dt>
+<dd>
+The Win32 console version works well on MS-Windows NT/2000/XP/Vista/7.  It 
+supports long file names and is compiled with "big" features.  It does not run
+perfectly well on MS-Windows 95/98/ME, especially when resizing the console
+window (this may crash MS-Windows...).
+</dd>
+</dl>
+There are a few extra files:
+<dl>
+<dt><B>iconv library</B>&nbsp;&nbsp;&nbsp;<A HREF="http://sourceforge.net/projects/gettext">libiconv</A></dt>
+<dd>
+A library used for converting character sets.
+Put "iconv.dll" in the same directory as gvim.exe to be able to edit files in
+many encodings.  You can find the dll file in the bin directory of the
+"libiconv-win32" archive.
+</dd>
+<dt><B>newer intl library</B>&nbsp;&nbsp;&nbsp;<A HREF="http://sourceforge.net/projects/gettext">libintl</A></dt>
+<dd>
+The included libintl.dll does not support encoding conversion.
+If you have installed the iconv library, as mentioned above, you can install a
+gettext library that uses it.
+Get "intl.dll" from the bin directory in the gettext-win32 archive and store it
+as "libintl.dll" in the same directory as gvim.exe, overwriting the file
+that may already be there.
+</dd>
+<dt><B>PC sources</B>&nbsp;&nbsp;&nbsp;vim##src.zip &nbsp;&nbsp;&nbsp;<A HREF="ftp://ftp.vim.org/pub/vim/pc/vim73_46src.zip">vim73_46src.zip</A></dt>
+<dd>
+The source files, packed for the PC.  This only includes the files needed on
+the PC, not for other systems.  The files are in dos format CR-LF.
+</dd>
+<dt><B>PC debug files</B>&nbsp;&nbsp;&nbsp;gvim##.pdb &nbsp;&nbsp;&nbsp;<A HREF="ftp://ftp.vim.org/pub/vim/pc/gvim73_46.pdb">gvim73_46.pdb</A>&nbsp;&nbsp;&nbsp;gvim##ole.pdb &nbsp;&nbsp;&nbsp;<A HREF="ftp://ftp.vim.org/pub/vim/pc/gvim73_46ole.pdb">gvim73_46ole.pdb</A>&nbsp;&nbsp;&nbsp;vim##w32.pdb &nbsp;&nbsp;&nbsp;<A HREF="ftp://ftp.vim.org/pub/vim/pc/vim73_46w32.pdb">vim73_46w32.pdb</A></dt>
+<dd>
+When you notice a bug or a crash in Vim these files can be used to help tracing down the problem.  In Vim 7 do ":help debug-win32" to see how.
+</dd>
+<dt><B>PC translations</B>&nbsp;&nbsp;&nbsp;vim##lang.zip &nbsp;&nbsp;&nbsp;<A HREF="ftp://ftp.vim.org/pub/vim/pc/vim72lang.zip">vim72lang.zip</A></dt>
+<dd>
+<b>Only for 7.2 and earlier, for 7.3 these are included in the "rt" archive.</b>
+Translated messages and menu files, packed for the PC.  Use this to see
+non-English menus.  The messages are only translated when the libintl.dll
+library is installed.
+</dd>
+<dt><B>Windows 3.1 GUI executable</B>&nbsp;&nbsp;&nbsp;gvim##w16.zip and gvim##m16.zip</dt>
+<dd>
+These are GUI versions for 16 bit windows (Windows 3.1).  The "w16" has many
+features, "m16" has few features (for when you're short on memory).
+</dd>
+</dl>
+The files ending in ".zip" can be unpacked with any unzip program.
+Make sure you unpack them all in the same directory!
+<P>
+<b>Alternate distributions</b>
+<P>
+<A NAME="cream"></A>
+For an unofficial version that does include all the latest patches and
+optionally a bit
+more: <A HREF="http://cream.sf.net/download.html">Cream</A>.
+The "one-click installer" mentioned includes the Cream changes.
+For the "real Vim" use the "without Cream" version listed further down.
+<P>
+You may also try <a href="http://wyw.dcweb.cn/#download">Yongwei's build</a>,
+executables with slightly different interfaces supported.
+<P>
+For a Cygwin binary look at <A HREF="#others">others</A>.
+<P>
+
+
+<p>
+<A HREF="#top">TOP</A>
+
+<hr noshade size="1" color="#000000">
+
+<A NAME="amiga"></A>
+<h1>Amiga</h1>
+Quite a long time ago, Vim development started on the Amiga.  Although it's a
+really old system now, it might still work.  However, this has not been tested 
+recently.
+You may have to use an older version for which Amiga binaries are available.
+<p>
+For Vim 5.x and Vim 6 look in
+<A HREF="ftp://ftp.vim.org/pub/vim/amiga">the amiga directory</A>.
+<br>
+Vim 7 files can be found at
+<A href="http://os4depot.net/index.php?function=showfile&file=utility/text/edit/vim-bin.lha">os4depot.net</a>.  This is for AmigaOS 4.  Made by Peter Bengtsson.
+<dl>
+<dt><B>Runtime files</B>&nbsp;&nbsp;&nbsp;vim##rt.tgz &nbsp;&nbsp;&nbsp;<A HREF="ftp://ftp.vim.org/pub/vim/amiga/vim64rt.tgz">vim64rt.tgz</A></dt>
+<dd>
+Documentation, syntax files, etc.  You always need this.
+</dd>
+<dt><B>Executable</B>&nbsp;&nbsp;&nbsp;vim##bin.tgz &nbsp;&nbsp;&nbsp;<A HREF="ftp://ftp.vim.org/pub/vim/amiga/vim64bin.tgz">vim64bin.tgz</A></dt>
+<dd>
+The executables for Vim and Xxd.
+For Vim 6 it includes "big" features, for Vim 5.x it
+includes the normal features.
+For Vim 6.2 it is not available (my Amiga had harddisk problems then, this miraculously healed later).
+</dd>
+<dt><B>Big executable</B>&nbsp;&nbsp;&nbsp;vim##big.tgz</dt>
+<dd>
+Vim with "big" features and Xxd.  Only for Vim 5.x.
+</dd>
+<dt><B>Sources</B>&nbsp;&nbsp;&nbsp;vim##src.tgz &nbsp;&nbsp;&nbsp;<A HREF="ftp://ftp.vim.org/pub/vim/amiga/vim64src.tgz">vim64src.tgz</A></dt>
+<dd>
+The source files for the Amiga.
+Only needed when you want to compile Vim yourself.
+</dd>
+</dl>
+The files are all tar archives, compressed with gzip.  To unpack, first
+uncompress them with <B>gzip -d <I>filename</I></B>.  Then unpack with
+<B>tar xf <I>filename</I></B>.  You need to unpack the archives in the same
+directory.
+
+<p>
+<A HREF="#top">TOP</A>
+
+<hr noshade size="1" color="#000000">
+
+<A NAME="os2"></A>
+<h1>OS/2</h1>
+The OS/2 version runs in a console window.
+<p>
+For Vim 5.x and Vim 6 look in
+<A HREF="ftp://ftp.vim.org/pub/vim/os2">the os2 directory</A>.
+Version 6.2 is not available.
+Versions 6.3 and 6.4 were compiled by David Sanders.
+<br>
+Version 7.0 was compiled by David Sanders.
+<dl>
+<dt><B>Runtime files</B>&nbsp;&nbsp;&nbsp;vim##rt.zip &nbsp;&nbsp;&nbsp;<A HREF="ftp://ftp.vim.org/pub/vim/os2/vim70rt.zip">vim70rt.zip</A></dt>
+<dd>
+Documentation, syntax files, etc.  You always need this.
+</dd>
+<dt><B>Executables</B>&nbsp;&nbsp;&nbsp;vim##os2.zip &nbsp;&nbsp;&nbsp;<A HREF="ftp://ftp.vim.org/pub/vim/os2/vim70os2.zip">vim70os2.zip</A></dt>
+<dd>
+Vim, Xxd, Tee and EMX libraries.
+</dd>
+</dl>
+The files ending in ".zip" can be unpacked with any unzip program.
+Make sure you both zip archives in the same directory!
+<p>
+If you want to compile the OS/2 version, you need the EMX compiler.  Use the
+Unix source archive, runtime files and the extra archive.  After unpacking the
+runtime archive, move all the files and directories in the "runtime"
+directory one level up.
+
+<p>
+<A HREF="#top">TOP</A>
+
+<hr noshade size="1" color="#000000">
+
+<A NAME="mac"></A>
+<h1>Macintosh</h1>
+The Macintosh binaries are not on the Vim ftp site.  They are produced by a few
+Macintosh lovers.  Often they lag behind a few versions.
+<p>
+Since MacOS 10.3 the "vi" program is actually a console version of Vim 6.2 or 
+later.  It has few features.  If you want a GUI version or more features Vim 
+needs to be installed separately.
+<p>
+There are currently two kinds of Vim for Macintosh:
+<UL>
+<LI>Using the Cocoa GUI.  Also known as MacVim.  This is the latest and is 
+being actively developed.  This behaves like a Mac application.</LI>
+<LI>Using the Carbon GUI.  This is an older way of doing things and isn't
+updated much any more.  This behaves more like Vim on Unix.</LI>
+</UL>
+<p>
+<h2>Cocoa (MacVim)</h2>
+<p>
+MacVim has more a Mac look and feel, is developed actively and most people
+prefer this version.  Most of MacVim was made by Björn Winckler.
+<p>
+MacVim can be downloaded here: <a href="http://code.google.com/p/macvim/">http://code.google.com/p/macvim/</a>
+<p>
+New versions are made quite often.
+Subscribe to the
+<a href="http://www.vim.org/maillist.php#vim-mac">vim-mac maillist</a>
+to be informed about bugs and updates.
+<p>
+<h2>Carbon</h2>
+<p>
+Recent binaries for Mac OS/X can be found on this
+<a href="http://sourceforge.net/project/showfiles.php?group_id=213254">SourceForge project</a>.
+Maintained by Nicholas Stallard.
+<p>
+There are several versions of Vim 6.x for Mac OS on
+<A href="http://macvim.org/">http://macvim.org/</A>.
+<P>
+A GUI version for MacOS Classic (7 - 9) compiled by Axel Kielhorn can
+be found at <A href="http://macvim.org/MacClassic/">http://macvim.org/MacClassic/</A>.
+<P>
+A GUI version for MacOS X 10.1 compiled by Benji Fisher can be found
+at <A href="http://macvim.org/OSX/">http://macvim.org/OSX/</A>.
+This version does not work with MacOS X 10.2 (Jaguar). A special version that
+runs only on 10.2 is provided at the same location.
+<P>
+There is also a version for Mac OSX that works in a terminal window and a GUI
+version for X11 with GTK (produced by Marc Liyanage):<br>
+<A HREF="http://www.entropy.ch/software/macosx/welcome.html#vim">http://www.entropy.ch/software/macosx/welcome.html#vim</A>
+<p>
+Here is a multi-byte version of Vim 5.7 (for Japanese, possibly also for
+Korean and Chinese; not for Unicode):<br>
+<A HREF="http://www-imai.is.s.u-tokyo.ac.jp/~asai/macvim-e.html">http://www-imai.is.s.u-tokyo.ac.jp/~asai/macvim-e.html</A>
+<P>
+Most of the work for
+the Macintosh port (Classic and Carbon) was done by Dany St-Amant.
+<p>
+If you have OSX and a setup for compiling programs, you can use the Unix and
+Extra source code archives and compile yourself.  See the Unix section
+above.The development tools can be downloaded from Apple's developer web site.
+Hint: stuffit expander can handle .bz2 files.
+Turn to <A href="maillist.php#vim-mac">the vim-mac maillist</A> to meet other
+Vim-Mac users.
+<p>
+<A HREF="#top">TOP</A>
+
+<hr noshade size="1" color="#000000">
+
+<A NAME="others"></A>
+<h1>Others</h1>
+This is a list of links to sites where various versions of Vim can be obtained.
+These are supported by individuals, use at your own risk.
+<P>
+	<table cellpadding="4" border="0">
+	<tr>
+		<td>
+		<A HREF="http://credentiality2.blogspot.com/2010/08/native-vim-for-android.html">Android</A>
+		</td>
+		<td>
+		Only on rooted Android.
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<A HREF="ftp://ftp.vim.org/pub/vim/qnx/">QNX</A>
+		</td>
+		<td>
+		Provided by Yakov Zaytsev.  Requires QNX 6.3.0/6.3.2 with service pack 2.
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<A HREF="http://pi7.fernuni-hagen.de/hartrumpf/agenda/vim/vim.vr3">Agenda</A>
+		</td>
+		<td>
+		http://pi7.fernuni-hagen.de/hartrumpf/agenda/vim/vim.vr3
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<A HREF="http://killefiz.de/zaurus/showdetail.php?app=388">Sharp Zaurus</A>
+		</td>
+		<td>
+		http://killefiz.de/zaurus/showdetail.php?app=388
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<A HREF="http://www.uni-magdeburg.de/steschum/hpcsh-pkgs/">HP Jornada</A>
+		</td>
+		<td>
+		http://www.uni-magdeburg.de/steschum/hpcsh-pkgs/
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<A HREF="http://www.rainer-keuchel.de/wince/vim.html">MS-Windows CE</A>
+		</td>
+		<td>
+		http://www.rainer-keuchel.de/wince/vim.html
+		</td>
+	</tr>
+	<tr>
+		<td>
+<A HREF="http://www.geocities.com/jstarship_2001/vim-tru64.html">Compaq Tru64 Unix on Alpha</A>
+		</td>
+		<td>
+		http://www.geocities.com/jstarship_2001/vim-tru64.html
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<A HREF="http://www.cygwin.com/packages/vim/">Cygwin (console)</A>
+		</td>
+		<td>
+		http://www.cygwin.com/packages/vim/<br>
+		Installing is done with the Cygwin
+		<A HREF="http://cygwin.com/setup.exe">setup.exe</A>.
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<A HREF="http://lassauge.free.fr/cygwin/">Cygwin (with GTK GUI)</A>
+		</td>
+		<td>
+		http://lassauge.free.fr/cygwin/
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<A HREF="http://www.polarhome.com/vim/">Open VMS</A>
+		</td>
+		<td>
+		http://www.polarhome.com/vim/
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<A HREF="http://www.vim.riscos.org.uk/">RISC OS</A>
+		</td>
+		<td>
+		http://www.vim.riscos.org.uk/  (sorry, currently doesn't appear to work...)
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<A HREF="http://www.akcaagac.com/index_vim.html">MorphOS</A>
+		</td>
+		<td>
+		http://www.akcaagac.com/index_vim.html
+		</td>
+	</tr>
+	</table>
+
+
+<p>
+<A HREF="#top">TOP</A>
+<!-- finish off the framework -->
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td class="darkbg"><img src="/images/spacer.gif" width="1" height="1" border="0" alt=""><br></td>
+
+    <td class="sidebar">
+      <table width="128" cellpadding="4" cellspacing="0" border="0">
+        <tr valign="top">
+          <td class="sidebar">
+
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-3005259998294962";
+/* 120x600, created 7/25/08 */
+google_ad_slot = "7276811434";
+google_ad_width = 120;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+
+	  </td>
+	</tr>
+        <tr valign="top">
+          <td class="sidebar" align='center'>
+             &nbsp;<br>
+	     <a href="http://iccf-holland.org/clickkindle.html"><img src="/images/kindle_125x125.gif" alt="Buy a book, help Uganda, learn Vim"></a>
+	     <br>
+	     <a href="http://iccf-holland.org/click1.html">Buy at Amazon<br>Help Uganda</a>
+          </td>
+        </tr>
+      </table>
+    </td>
+
+  </tr>
+</table>
+
+<!-- END OF THE PAGE BODY: BETWEEN HEADER AND FOOTER -->
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" bordercolor="red">
+  <tr><td colspan="4"><img src="/images/spacer.gif" width="1" height="5" alt=""></td></tr>
+  <tr><td colspan="4" bgcolor="#000000"><img src="/images/spacer.gif" height="2" width="1" alt=""></td></tr>
+  <tr><td colspan="4"><img src="/images/spacer.gif" width="1" height="5" alt=""></td></tr>
+  <tr>
+    <td><img src="/images/spacer.gif" width="5" height="1" alt=""></td>
+
+    <td align="left" valign="top"><small>
+      If you have questions or remarks about this site, visit the
+      <a href="http://vimonline.sf.net">vimonline development</a> pages.
+      Please use this site responsibly.
+      <br> 
+      
+      Questions about <a href="http://www.vim.org/about.php">Vim</a> should go
+      to the <a href="http://www.vim.org/maillist.php">maillist</a>.
+      Help Bram <a href="http://iccf-holland.org/">help Uganda</a>.
+      </small>
+	&nbsp;
+	&nbsp;
+
+	<!-- Start of StatCounter Code -->
+	<script type="text/javascript" language="javascript">
+	var sc_project=1417324; 
+	var sc_invisible=1; 
+	var sc_partition=11; 
+	var sc_security="d41633bc"; 
+	</script>
+
+	<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/counter.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c12.statcounter.com/counter.php?sc_project=1417324&java=0&security=d41633bc&invisible=0" alt="free tracking" border="0"></a> </noscript>
+	<!-- End of StatCounter Code -->
+          </td>
+
+    <td align="right" valign="top">
+      		<a href="http://sourceforge.net/projects/vim" rel="nofollow"><img src="http://sflogo.sourceforge.net/sflogo.php?group_id=8&type=1" width="88" height="31" border="0" alt="SourceForge.net Logo" /></a>
+    </td>
+
+    <td><img src="/images/spacer.gif" width="5" height="1" alt=""></td>
+  </tr>
+
+    
+  <tr><td colspan="4"><img src="/images/spacer.gif" width="1" height="5" alt=""></td>
+  
+  </tr>
+</table>
+
+<!-- for Google +1 button -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+</body>
+</html>
+

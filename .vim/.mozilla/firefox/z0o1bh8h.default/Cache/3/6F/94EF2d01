@@ -1,0 +1,729 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+  <link rel="Stylesheet" type="text/css" href="/css/style.css" >
+  <title>FuzzyFinder - buffer/file/command/tag/etc explorer with fuzzy matching : vim online</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <meta name="KEYWORDS" content="Vim, Vi IMproved, text editor, home, documentation, tips, scripts, news">
+  <link rel="shortcut icon" type="image/x-icon" href="/images/vim_shortcut.ico">
+</head>
+
+<body topmargin="0" leftmargin="0" marginheight="0" marginwidth="0" bgcolor="#ffffff"> 
+
+<!-- HEADER, SPONSOR IMAGE, VIM IMAGE AND BOOK AD -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0" bordercolor="red">
+  <tr>
+    <td colspan="4" class="lightbg"><img src="/images/spacer.gif" width="1" height="5" alt=""></td>
+  </tr>
+  <tr>
+  <td class="lightbg">&nbsp;&nbsp;&nbsp;</td>
+  <td class="lightbg" align="left"><a href="/sponsor/index.php"><img src="/images/sponsorvim.gif" alt="sponsor Vim development" border="0"></a></td>
+    <td class="lightbg" align="center"><a href="/index.php"><img src="/images/vim_header.gif" border="0" alt="Vim logo"></a></td>
+    <td class="lightbg" align="right"><a href="http://iccf-holland.org/click5.html"><img src="/images/buyhelplearn.gif" alt="Vim Book Ad" border="0"></a></td>
+  </tr>
+  <tr>
+    <td colspan="4" class="lightbg"><img src="/images/spacer.gif" width="1" height="5" alt=""></td>
+  </tr>
+  <tr>
+    <td colspan="4" class="darkbg"><img src="/images/spacer.gif" width="1" height="10" alt=""></td>
+  </tr>
+</table>
+<!-- THE PAGE BODY: BETWEEN HEADER AND FOOTER -->
+
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+  <col width="180">
+  <col width="1">
+
+  <tr valign="top">
+    <td class="sidebar">
+      <table width="180" cellpadding="4" cellspacing="0" border="0">
+        <tr valign="top">
+          <td class="sidebar">
+
+<!-- INCLUDE THE PAGE NAVIGATION -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0" bordercolor="red">
+    <tr>
+        <td><small>not logged in (<a href="/login.php">login</a>)</small></td>
+    </tr>
+    <tr><td>
+<small>&nbsp;</small>
+<form action="http://www.google.com/cse" id="cse-search-box">
+  <div>
+    <input type="hidden" name="cx" value="partner-pub-3005259998294962:bvyni59kjr1" />
+    <input type="hidden" name="ie" value="ISO-8859-1" />
+    <input type="text" name="q" size="20" />
+    <br>
+    <input type="submit" name="sa" value="Search" />
+  </div>
+</form>
+<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en"></script>
+    </td></tr>
+    <tr>
+        <td><img src="/images/spacer.gif" alt="" border="0" width="1" height="1"></td>
+    </tr>
+    <tr>
+        <td class="darkbg"><img src="/images/spacer.gif" alt='' border="0" height="3"></td>
+    </tr>
+    <tr>
+        <td><img src="/images/spacer.gif" alt="" border="0" width="1" height="2"></td>
+    </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/index.php">Home</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/search.php">Advanced search</a></td>
+        </tr>
+    <tr>
+        <td><img src="/images/spacer.gif" alt="" border="0" width="1" height="7"></td>
+    </tr>
+    <tr>
+        <td class="checker"><img src="/images/spacer.gif" alt='' border="0" height="1"></td>
+    </tr>
+    <tr>
+        <td><img src="/images/spacer.gif" alt="" border="0" width="1" height="7"></td>
+    </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/about.php">About Vim</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/community.php">Community</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/news/news.php">News</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/sponsor/index.php">Sponsoring</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/trivia.php">Trivia</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/docs.php">Documentation</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/download.php">Download</a></td>
+        </tr>
+    <tr>
+        <td><img src="/images/spacer.gif" alt="" border="0" width="1" height="7"></td>
+    </tr>
+    <tr>
+        <td class="checker"><img src="/images/spacer.gif" alt='' border="0" height="1"></td>
+    </tr>
+    <tr>
+        <td><img src="/images/spacer.gif" alt="" border="0" width="1" height="7"></td>
+    </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/scripts/index.php">Scripts</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/tips/index.php">Tips</a></td>
+        </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/account/index.php">My Account</a></td>
+        </tr>
+    <tr>
+        <td><img src="/images/spacer.gif" alt="" border="0" width="1" height="7"></td>
+    </tr>
+    <tr>
+        <td class="checker"><img src="/images/spacer.gif" alt='' border="0" height="1"></td>
+    </tr>
+    <tr>
+        <td><img src="/images/spacer.gif" alt="" border="0" width="1" height="7"></td>
+    </tr>
+        <tr>
+            <td class="sidebarheader"><a href="/huh.php">Site Help</a></td>
+        </tr>
+</table>
+<br>
+<g:plusone></g:plusone>
+
+            <table width="172" cellpadding="0" cellspacing="0" border="0">
+              <tr><td><img src="/images/spacer.gif" alt="" border="0" width="1" height="8"></td></tr>
+              <tr><td class="darkbg"><img src="/images/spacer.gif" width="1" height="3" alt=""></td></tr>
+            </table>
+            <br>
+
+<!-- INCLUDE THE PAGE SIDEBAR TEXT -->
+&nbsp;
+
+          </td>
+        </tr>
+      </table>
+    </td>
+
+    <td class="darkbg"><img src="/images/spacer.gif" width="1" height="1" border="0" alt=""><br></td>
+    <td>
+      <table width="100%" cellpadding="10" cellspacing="0" border="0" bordercolor="red">
+        <tr>
+          <td valign="top">
+
+<span class="txth1">FuzzyFinder : buffer/file/command/tag/etc explorer with fuzzy matching</span> 
+
+<br>
+<br>
+
+<!-- karma table -->
+<table cellpadding="4" cellspacing="0" border="1" bordercolor="#000066">
+<tr>
+  <td class="lightbg"><b>&nbsp;script karma&nbsp;</b></td>
+  <td>
+    Rating <b>1715/456</b>,
+    Downloaded by 22512    &nbsp;
+    <g:plusone></g:plusone>
+  </td>
+  <td class="lightbg">
+  <b>&nbsp;Comments, bugs, improvements&nbsp;</b>
+  </td>
+  <td>
+    <a href="http://vim.wikia.com/wiki/Script:1984">Vim wiki</a>
+  </td>  
+</tr>
+</table>
+<p>
+
+<table cellspacing="0" cellpadding="0" border="0">
+<tr><td class="prompt">created by</td></tr>
+<tr><td><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></td></tr>
+<tr><td>&nbsp;</td></tr>
+<tr><td class="prompt">script type</td></tr>
+<tr><td>utility</td></tr>
+<tr><td>&nbsp;</td></tr>
+<tr><td class="prompt">description</td></tr>
+<tr><td>Repository:<br>&nbsp;&nbsp;<a target="_blank" href="https://bitbucket.org/ns9tks/vim-fuzzyfinder/">https://bitbucket.org/ns9tks/vim-fuzzyfinder/</A><br><br>Issues:<br>&nbsp;&nbsp;<a target="_blank" href="http://bitbucket.org/ns9tks/vim-fuzzyfinder/issues/">http://bitbucket.org/ns9tks/vim-fuzzyfinder/issues/</A><br><br>Download latest(development) version<br>&nbsp;&nbsp;<a target="_blank" href="https://bitbucket.org/ns9tks/vim-fuzzyfinder/get/tip.zip">https://bitbucket.org/ns9tks/vim-fuzzyfinder/get/tip.zip</A><br><br>Sceenshot:<br>&nbsp;&nbsp;Buffer mode:<br>&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="http://cdn.bitbucket.org/ns9tks/vim-fuzzyfinder/downloads/fuzzyfinder-buffer.png">http://cdn.bitbucket.org/ns9tks/vim-fuzzyfinder/downloads/fuzzyfinder-buffer.png</A><br>&nbsp;&nbsp;File mode (searching from all files in vim runtime directories using abbreviation/multiple-search)<br>&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="http://cdn.bitbucket.org/ns9tks/vim-fuzzyfinder/downloads/fuzzyfinder-file-abbrev.png">http://cdn.bitbucket.org/ns9tks/vim-fuzzyfinder/downloads/fuzzyfinder-file-abbrev.png</A><br><br><br>==============================================================================<br>INTRODUCTION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*fuf-introduction*<br><br>FuzzyFinder provides convenient ways to quickly reach the<br>buffer/file/command/bookmark/tag you want. FuzzyFinder searches with the<br>fuzzy/partial pattern to which it converted an entered pattern.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Entered pattern&nbsp;&nbsp;Fuzzy pattern&nbsp;&nbsp; Partial pattern ~<br>&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;abc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*a*b*c*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *abc*<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dir/file&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dir/*f*i*l*e*&nbsp;&nbsp; dir/*file*<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d*r/file&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d*r/*f*i*l*e*&nbsp;&nbsp; d*r/*file*<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;../**/s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;../**/*s*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ../**/*s*<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (** allows searching a directory tree.)<br>&lt;<br>You will be happy when:<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;./AhLongLongLongLongLongFile.txt&quot;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;./AhLongLongLongLongLongName.txt&quot;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;./OhLongLongLongLongLongFile.txt&quot;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;./OhLongLongLongLongLongName.txt&quot; &lt;- you want :O<br><br>Type &quot;ON&quot; and &quot;OhLongLongLongLongLongName.txt&quot; will be selected. :D<br><br>FuzzyFinder can search:<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- buffers<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- files<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- directories<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- most recently used files<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- files around most recently used files<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- most recently used command-lines<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- bookmarked files<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- bookmarked directories<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- tags<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- files which are included in current tagfiles<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- jump list<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- change list<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- buffer lines<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- quickfix<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- help<br><br>FuzzyFinder also provides APIs to use its system of searching files or<br>selecting items.<br><br>FuzzyFinder supports multibyte characters.<br><br><br>==============================================================================<br>INSTALLATION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*fuf-installation*<br><br>Put all files into your runtime directory. If you have the zip file, extract<br>it to your runtime directory.<br><br>You should place the files as follows:<br>&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;your runtime directory&gt;/plugin/fuf.vim<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;your runtime directory&gt;/doc/fuf.txt<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>&lt;<br>If you are disgusted to make your runtime directory confused with a lot of<br>plugins, put each of the plugins into a directory individually and just add<br>the directory path to 'runtimepath'. It's easy to uninstall plugins.<br><br>Then update your help tags files to enable help for this plugin. See<br>|add-local-help| for details.<br><br>Requirements: ~<br><br>- L9 library (<a href="/scripts/script.php?script_id=3252">vimscript #3252</a>)<br><br><br>==============================================================================<br>USAGE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*fuf-usage*<br><br>You can launch FuzzyFinder by the following commands:<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Command&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mode ~<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|:FufBuffer|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Buffer mode (|fuf-buffer-mode|)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|:FufFile|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - File mode (|fuf-file-mode|)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|:FufCoverageFile| - Coverage-File mode (|fuf-coveragefile-mode|)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|:FufDir|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Directory mode (|fuf-dir-mode|)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|:FufMruFile|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- MRU-File mode (|fuf-mrufile-mode|)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|:FufMruCmd|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - MRU-Command mode (|fuf-mrucmd-mode|)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|:FufBookmarkFile| - Bookmark-File mode (|fuf-bookmarkfile-mode|)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|:FufBookmarkDir|&nbsp;&nbsp;- Bookmark-Dir mode (|fuf-bookmarkdir-mode|)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|:FufTag|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Tag mode (|fuf-tag-mode|)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|:FufBufferTag|&nbsp;&nbsp;&nbsp;&nbsp;- Buffer-Tag mode (|fuf-buffertag-mode|)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|:FufTaggedFile|&nbsp;&nbsp; - Tagged-File mode (|fuf-taggedfile-mode|)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|:FufJumpList|&nbsp;&nbsp;&nbsp;&nbsp; - Jump-List mode (|fuf-jumplist-mode|)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|:FufChangeList|&nbsp;&nbsp; - Change-List mode (|fuf-changelist-mode|)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|:FufQuickfix|&nbsp;&nbsp;&nbsp;&nbsp; - Quickfix mode (|fuf-quickfix-mode|)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|:FufLine|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Line mode (|fuf-line-mode|)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|:FufHelp|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Help mode (|fuf-help-mode|)<br><br>It is recommended to map these commands.<br><br>These commands open 1-line buffer to enter search pattern and start insert<br>mode.<br><br>FuzzyFinder searchs for matching items with an entered pattern and shows them<br>in a completion menu. For more details on pattern matching, see<br>|fuf-search-patterns|.<br><br>If there are a lot of matching items, FuzzyFinder limits the number of<br>enumerating items (|g:fuf_enumeratingLimit|) to speed up a response time, and<br>highlights the pattern with &quot;Error&quot; group.<br><br>The first item in the completion menu will be selected automatically.<br><br>Typing &lt;C-w&gt; deletes one block of an entered pattern before the cursor, like a<br>directory name.<br><br>with &lt;C-s&gt; (|g:fuf_keyPrevPattern|) and &lt;C-^&gt; (|g:fuf_keyNextPattern|), You<br>can recall patterns which have been entered before from history.<br><br>You can open a selected item in various ways:<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;CR&gt;&nbsp;&nbsp;(|g:fuf_keyOpen|)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- opens in a previous window.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;C-j&gt; (|g:fuf_keyOpenSplit|)&nbsp;&nbsp; - opens in a split window.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;C-k&gt; (|g:fuf_keyOpenVsplit|)&nbsp;&nbsp;- opens in a vertical-split window.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;C-l&gt; (|g:fuf_keyOpenTabpage|) - opens in a new tab page.<br><br>To cancel and return to previous window, just leave Insert mode.<br><br>With &lt;C-\&gt;&lt;C-\&gt; (|g:fuf_keySwitchMatching|), You can switch search method<br>between fuzzy matching and partial matching.<br><br>With &lt;C-t&gt; (|g:fuf_keyNextMode|) and &lt;C-y&gt; (|g:fuf_keyPrevMode|), You can<br>switch current mode without leaving Insert mode .<br><br>You can preview selected item with &lt;C-@&gt; (|g:fuf_keyPreview|) in some modes.<br>Repeating the key on the same item shows another information. The height<br>of command-line area is changed to |g:fuf_previewHeight| when you launch a<br>mode supporting preview. This feature is available when |g:fuf_previewHeight|<br>is not 0.<br><br><br>==============================================================================<br>MODES&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*fuf-modes*<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *fuf-buffer-mode*<br>Buffer mode ~<br><br>This mode provides an interface to select a buffer from a list of existing<br>buffers and open it.<br><br>Press &lt;C-]&gt; (|g:fuf_buffer_keyDelete|) in this mode and selected buffer will<br>be deleted.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *fuf-file-mode*<br>File mode ~<br><br>This mode provides an interface to search a file tree for a file and open it.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *fuf-coveragefile-mode*<br>Coverage-File mode ~<br><br>This mode provides an interface to select a file from all files of a preset<br>coverage and open it.<br><br>By default, This mode lists all files under the current working directory<br>recursively. (|g:fuf_coveragefile_globPatterns|)<br><br>If you want to search other coverage, execute |FufCoverageFileRegister|<br>command to register new search coverage and |FufCoverageFileChange| command to<br>choose a search coverage and launch Coverage-File mode.<br><br>In addition, there is another way to change a search coverage with<br>|fuf#setOneTimeVariables()| function.<br><br>Example: search only .h and .c files:<br>&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;call fuf#setOneTimeVariables(['g:fuf_coveragefile_globPatterns', ['**/*.h', '**/*.c']])<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\ | FufCoverageFile<br>&lt;<br>Example: search your home directory in addition to the default coverage:<br>&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;call fuf#setOneTimeVariables(['g:fuf_coveragefile_globPatterns', g:fuf_coveragefile_globPatterns + ['~/**/.*', '~/**/*']])<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\ | FufCoverageFile<br>&lt;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*fuf-dir-mode*<br>Directory mode ~<br><br>This mode provides an interface to search a file tree for a directory and<br>change the current directory.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*fuf-mrufile-mode*<br>MRU-File mode ~<br><br>This mode provides an interface to select a file from the most recently used<br>files and open it.<br><br>Press &lt;C-]&gt; (|g:fuf_mrufile_keyExpand|) in this mode and files around the most<br>recently used files are listed. Each time the key is pressed, the search range<br>are expanded one level along the directory tree upwardly/downwardly.<br><br>This mode is set to disable by default (|g:fuf_modesDisable|) because<br>processes for this mode in |BufEnter| and |BufWritePost| could cause<br>Performance issue.<br><br>See also: |FufMruFileInCwd|<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *fuf-mrucmd-mode*<br>MRU-Command mode ~<br><br>This mode provides an interface to select a command from the most recently<br>used commands and execute it.<br><br>This mode is set to disable by default (|g:fuf_modesDisable|) because mapping<br>&lt;CR&gt; of Command-line mode required by this mode has side effects.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *fuf-bookmarkfile-mode*<br>Bookmark-File mode ~<br><br>This mode provides an interface to select one of the bookmarks you have added<br>beforehand and jump there.<br><br>You can add a cursor line to bookmarks by |:FufBookmarkFileAdd| command.<br>Execute that command and you will be prompted to enter a bookmark name.<br><br>FuzzyFinder adjusts a line number for jump. If a line of bookmarked position<br>does not match to a pattern when the bookmark was added, FuzzyFinder searches<br>a matching line around bookmarked position. So you can jump to a bookmarked<br>line even if the line is out of bookmarked position. If you want to jump to<br>bookmarked line number without the adjustment, set<br>|g:fuf_bookmarkfile_searchRange| option to 0.<br><br>Press &lt;C-]&gt; (|g:fuf_bookmarkfile_keyDelete|) in this mode and selected<br>bookmark will be deleted.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*fuf-bookmarkdir-mode*<br>Bookmark-Dir mode ~<br><br>This mode provides an interface to select one of the bookmarks you have added<br>beforehand and change the current directory.<br><br>You can add a directory to bookmarks by |:FufBookmarkDirAdd| command. Execute<br>that command and you will be prompted to enter a directory path and&nbsp;&nbsp;a<br>bookmark name.<br><br>Press &lt;C-]&gt; (|g:fuf_bookmarkdir_keyDelete|) in this mode and selected bookmark<br>will be deleted.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*fuf-tag-mode*<br>Tag mode ~<br><br>This mode provides an interface to select a tag and jump to the definition of<br>it.<br><br>Following mapping is a replacement for &lt;C-]&gt;:<br>&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;noremap &lt;silent&gt; &lt;C-]&gt; :FufTagWithCursorWord!&lt;CR&gt;<br>&lt;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*fuf-buffertag-mode*<br>Buffer-Tag mode ~<br><br>This mode provides an interface to select a tag of current buffer or all<br>buffers and jump to the definition of it.<br><br>Tag list is instantly created when FuzzyFinder is launched, so there is no<br>need to make tags file in advance.<br><br>|FufBufferTag| covers current buffer and |FufBufferTagAll| covers all buffers.<br><br>Following mapping is a replacement for &lt;C-]&gt;:<br>&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nnoremap &lt;silent&gt; &lt;C-]&gt; :FufBufferTagWithCursorWord!&lt;CR&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vnoremap &lt;silent&gt; &lt;C-]&gt; :FufBufferTagAllWithSelectedText!&lt;CR&gt;<br>&lt;<br>or<br>&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nnoremap &lt;silent&gt; &lt;C-]&gt; :FufBufferTagAllWithCursorWord!&lt;CR&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vnoremap &lt;silent&gt; &lt;C-]&gt; :FufBufferTagAllWithSelectedText!&lt;CR&gt;<br>&lt;<br>This mode is inspired by taglist.vim (<a href="/scripts/script.php?script_id=273">vimscript #273</a>) and refered its codes.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *fuf-taggedfile-mode*<br>Tagged-File mode ~<br><br>This mode provides an interface to select one of the files which are included<br>in current tagfiles and open it.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *fuf-jumplist-mode*<br>Jump-List mode ~<br><br>This mode provides an interface to select one from the |jumplist| of the<br>current window and jump there.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *fuf-changelist-mode*<br>Change-List mode ~<br><br>This mode provides an interface to select one from the |changelist| of the<br>current buffer and jump there.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *fuf-quickfix-mode*<br>Quickfix mode ~<br><br>This mode provides an interface to select one from the |quickfix| list and<br>jump there.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *fuf-line-mode*<br>Line mode ~<br><br>This mode provides an interface to select a line from current buffer and jump<br>there.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *fuf-help-mode*<br>Help mode ~<br><br>This mode provides an interface to select a help tag and jump to the help<br>page.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*fuf-givenfile-mode*<br>Given-File mode ~<br><br>This mode provides an API to open a selected file from a given list.<br><br>API function:<br>&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function fuf#givenfile#launch(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\ initialPattern, partialMatching, prompt, items)<br>&lt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;initialPattern&nbsp;&nbsp;- String which is inserted after launching<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FuzzyFinder.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;partialMatching - If non-zero, enable partial matching instead of<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fuzzy matching.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prompt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Prompt string<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;items&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - List of items.<br><br>Example of use:<br>&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot; Open one of your dotfiles.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;call fuf#givenfile#launch('', 0, '&gt;', split(glob('~/.*'), &quot;\n&quot;))<br>&lt;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *fuf-givendir-mode*<br>Given-Directory mode ~<br><br>This mode provides an API to change current working directory to a selected<br>one from a given list.<br><br>API function:<br>&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function fuf#givendir#launch(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\ initialPattern, partialMatching, prompt, items)<br>&lt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;initialPattern&nbsp;&nbsp;- String which is inserted after launching<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FuzzyFinder.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;partialMatching - If non-zero, enable partial matching instead of<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fuzzy matching.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prompt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Prompt string<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;items&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - List of items.<br><br><br>Example of use:<br>&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot; Change current working directory to one of your runtime directory.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;call fuf#givendir#launch('', 0, '&gt;', split(&runtimepath, ','))<br>&lt;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *fuf-givencmd-mode*<br>Given-Command mode ~<br><br>This mode provides an API to execute a selected command from a given list.<br><br>A selected command is executed by |feedkeys()|, so it is able to emulate a<br>series of key input in Normal mode.<br><br>API function:<br>&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function fuf#givencmd#launch(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\ initialPattern, partialMatching, prompt, items)<br>&lt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;initialPattern&nbsp;&nbsp;- String which is inserted after launching<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FuzzyFinder.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;partialMatching - If non-zero, enable partial matching instead of<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fuzzy matching.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prompt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Prompt string<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;items&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - List of items.<br><br><br>Example of use:<br>&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function GetAllCommands()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;redir =&gt; commands<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;silent command<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;redir END<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return map((split(commands, &quot;\n&quot;)[3:]),<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'&quot;:&quot; . matchstr(v:val, ''^....\zs\S*'')')<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;endfunction<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot; execute one of the user-defined commands <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;call fuf#givencmd#launch('', 0, '&gt;', GetAllCommands())<br><br>&lt;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *fuf-callbackfile-mode*<br>Callback-File mode ~<br><br>This mode provides an API to find and get a file path which is selected by an<br>user.<br><br>API function:<br>&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function fuf#callbackfile#launch(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\ initialPattern, partialMatching, prompt, exclude, listener)<br>&lt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;initialPattern&nbsp;&nbsp;- String which is inserted after launching<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FuzzyFinder.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;partialMatching - If non-zero, enable partial matching instead of<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fuzzy matching.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prompt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Prompt string.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exclude&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Regexp pattern for items which you want to exclude<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from completion list.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;listener&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- |Dictionary| which has 'onComplete' and 'onAbort'.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;They are called at the end of FuzzyFinder.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;listener.onComplete(item, method) is called with 2<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arguments which are a name of selected item and a<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number of open method when completed.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;listener.onAbort() is called when aborted.<br><br>Example of use:<br>&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let listener = {}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function listener.onComplete(item, method)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo &quot;Item: &quot; . a:item . &quot;\nMethod: &quot; . a:method<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;endfunction<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function listener.onAbort()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo &quot;Abort&quot;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;endfunction<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot; Find a file from current working directory.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;call fuf#callbackfile#launch('', 0, '&gt;', '', listener)<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot; Find a file from home directory.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;call fuf#callbackfile#launch('~/', 0, '&gt;', '', listener)<br>&lt;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *fuf-callbackitem-mode*<br>Callback-Item mode ~<br><br>This mode provides an API to get an item which is selected from a given list<br>by an user.<br><br>API function:<br>&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function fuf#callbackitem#launch(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\ initialPattern, partialMatching, prompt, listener, items, forPath)<br>&lt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;initialPattern&nbsp;&nbsp;- String which is inserted after launching<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FuzzyFinder.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;partialMatching - If non-zero, enable partial matching instead of<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fuzzy matching.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prompt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Prompt string<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;listener&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- |Dictionary| which has 'onComplete' and 'onAbort'.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;They are called at the end of FuzzyFinder.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;listener.onComplete(item, method) is called with 2<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arguments which are a name of selected item and a<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number of open method when completed.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;listener.onAbort() is called when aborted.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;items&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - List of items.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;forPath&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - If non-zero, use a matching method for files.<br><br>Example of use:<br>&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let listener = {}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function listener.onComplete(item, method)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo &quot;Item: &quot; . a:item . &quot;\nMethod: &quot; . a:method<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;endfunction<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function listener.onAbort()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo &quot;Abort&quot;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;endfunction<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot; Select an item from a given list.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;call fuf#callbackitem#launch('', 0, '&gt;', listener, ['ed', 'vi', 'vim'], 0)<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot; Select a file from a given list.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;call fuf#callbackitem#launch('', 0, '&gt;', listener, ['../foo/bar', 'baz'], 1)<br>&lt;<br><br>==============================================================================<br>DETAILED TOPICS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*fuf-detailed-topics*<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *fuf-setting-one-time-option* *fuf#setOneTimeVariables()*<br>Setting One-Time Options ~<br><br>If you want to set one-time options only for the next FuzzyFinder,<br>|fuf#setOneTimeVariables()| function will be of help. This function is used as<br>follows:<br>&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;call fuf#setOneTimeVariables(['g:fuf_ignoreCase', 0], ['&lines', 50])<br>&lt;<br>This function takes 0 or more arguments and each of them is a pair of a<br>variable name and its value. Specified options will be set practically next<br>time FuzzyFinder is launched, and restored when FuzzyFinder is closed.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *fuf-search-patterns*<br>Search Patterns ~<br><br>You can enter one primary pattern and zero or more refining patterns as search<br>patterns. An entered pattern is separated by &quot;;&quot; (|g:fuf_patternSeparator|),<br>and the first pattern is a primary pattern and the rest of patterns is a<br>refining pattern.<br>&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; primary&nbsp;&nbsp;&nbsp;&nbsp;refining&nbsp;&nbsp;refining<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |----------| |-------| |----|<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;MruFile&gt;bookmark.vim;autoload/;/home/<br>&lt;<br>A refining pattern is used to narrow down the list of matching items by<br>another pattern.<br><br>With a primary pattern, FuzzyFinder does fuzzy matching or partial matching,<br>which you specified. With a refining pattern, FuzzyFinder does partial<br>matching by default. (|g:fuf_fuzzyRefining|)<br><br>When you enter a number as refining pattern, it also can match the index of<br>each item.<br><br>In a mode which targets a static set of file paths (such as Buffer or MRU-File<br>mode, not File or Directory) and |g:fuf_splitPathMatching| is non-zero,<br>matching with a primary pattern is divided into head part and tail part and<br>done individually.<br>&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;head&nbsp;&nbsp; tail<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|------||-----|<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;foo/bar/baz.vim<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fuzzy matching example:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+----------------+---------+---------+---------+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| item \ pattern | foo/bar | foo/&nbsp;&nbsp;&nbsp;&nbsp;| bar&nbsp;&nbsp;&nbsp;&nbsp; |<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+----------------+---------+---------+---------+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| foo/bar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp; match |&nbsp;&nbsp; match |&nbsp;&nbsp; match |<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| foo/abc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| unmatch |&nbsp;&nbsp; match | unmatch |<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| abc/bar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| unmatch | unmatch |&nbsp;&nbsp; match |<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| foobar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | unmatch | unmatch |&nbsp;&nbsp; match |<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| foooo/barrrr&nbsp;&nbsp; |&nbsp;&nbsp; match |&nbsp;&nbsp; match |&nbsp;&nbsp; match |<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| foooo/fooooo&nbsp;&nbsp; | unmatch |&nbsp;&nbsp; match | unmatch |<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+----------------+---------+---------+---------+<br>&lt;<br>refining pattern can match anywhere on each path in the above case.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *fuf-sorting-of-completion-items*<br>Sorting Of Completion Items ~<br><br>FuzzyFinder sorts completion items with some rules.<br><br>An item, one part of which is matched with a whole pattern, is placed upper.<br>E.g., with the pattern &quot;bc&quot;, the item &quot;abc&quot; is placed upper than &quot;bac&quot;.<br><br>In the above case, items, each having matching part at the head of itself, are<br>placed upper than others. E.g., with the pattern &quot;foo&quot;, the item &quot;foobar&quot; is<br>placed upper than &quot;foobarbaz&quot;.<br><br>And the shorter the length of the item after matching position puts it higher.<br>E.g., with the pattern &quot;bar&quot;, the item &quot;foobar&quot; is placed upper than<br>&quot;foobarbaz&quot;.<br><br>If a pattern matches an item at only word boundaries of it, the item is placed<br>upper. E.g., with a pattern &quot;fb&quot;, items such as &quot;fooBarBaz&quot; and &quot;foo_bar_baz&quot;<br>is placed upper.<br><br>Plus, FuzzyFinder has a learning system. An item which has been completed in<br>the past with current pattern is placed upper.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*fuf-reusing-window*<br>Reusing Of A Window Containing Target Buffer/File ~<br><br>If a window containing target buffer is found in current tab page when<br>FuzzyFinder is going to open the buffer in a split new window, move to it. If<br>a window containing target buffer is found in other tab page when FuzzyFinder<br>is going to open the buffer in a new tab page, move to it.<br><br>You can disable that feature via 'reuse_window' options if always want to open<br>a buffer in a new window.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *fuf-hiding-menu*<br>To Hide The Completion Menu Temporarily In FuzzyFinder ~<br><br>You can close it by &lt;C-e&gt; and reopen it by &lt;C-x&gt;&lt;C-o&gt;.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*fuf-abbreviation* *fuf-multiple-search*<br>Abbreviations And Multiple Search ~<br><br>You can use abbreviations and multiple search in all modes by setting<br>|g:fuf_abbrevMap| option.<br><br>For example, set as below:<br>&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let g:fuf_abbrevMap = {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\&nbsp;&nbsp; &quot;^doc:&quot; : [<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\&nbsp;&nbsp;&nbsp;&nbsp; &quot;~/project/**/doc/&quot;,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\&nbsp;&nbsp;&nbsp;&nbsp; &quot;.vim/doc/&quot;,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\&nbsp;&nbsp; ],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\ }<br>&lt;<br>and enter &quot;doc:txt&quot; in File mode, then FuzzyFinder searches by the following<br>patterns:<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;~/project/**/doc/*t*x*t*&quot;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;.vim/doc/*t*x*t*&quot;<br><br>and show concatenated search results.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *fuf-data-file*<br>Data File ~<br><br>FuzzyFinder writes completion statistics, MRU data, bookmark, etc to files<br>under |g:fuf_dataDir|.<br><br>|:FufEditDataFile| command is helpful in editing your data files. This command<br>reads the data file in new unnamed buffer. Write the buffer and the data file<br>will be updated.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *fuf-cache*<br>Cache ~<br><br>Once a cache was created, It is not automatically updated to speed up the<br>response time by default. To update it, use |:FufRenewCache| command.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*fuf-dot-sequence*<br>Going Up Parent Directories With Dot Sequence ~<br><br>You can go up parent directories with entering dot sequence. Dot sequence<br>after a path separator is expanded to &quot;../&quot; sequence.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dot sequence&nbsp;&nbsp;&nbsp;&nbsp;Expanded pattern ~<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/..&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /../<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/../../<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/....&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /../../../<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *fuf-how-to-add-mode*<br>How To Add Mode ~<br><br>To add &quot;mymode&quot; mode, put the source file at autoload/fuf/mymode.vim and call<br>fuf#addMode(&quot;mymode&quot;) .<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*fuf-migemo*<br>What Is Migemo ~<br><br>Migemo is a search method for Japanese language.<br><br><br>==============================================================================<br></td></tr>
+<tr><td>&nbsp;</td></tr>
+<tr><td class="prompt">install details</td></tr>
+<tr><td></td></tr>
+<tr><td>&nbsp;</td></tr>
+</table>
+
+<!-- rating table -->
+<form name="rating" method="post">
+<input type="hidden" name="script_id" value="1984">
+<table cellpadding="4" cellspacing="0" border="1" bordercolor="#000066">
+<tr>
+  <td class="lightbg"><b>rate this script</b></td>
+  <td valign="middle">
+    <input type="radio" name="rating" value="life_changing">Life Changing
+    <input type="radio" name="rating" value="helpful">Helpful
+    <input type="radio" name="rating" value="unfulfilling">Unfulfilling&nbsp;
+    <input type="submit" value="rate">
+  </td>
+</tr>
+</table>
+</form>
+<span class="txth2">script versions</span> (<a href="add_script_version.php?script_id=1984">upload new version</a>)
+<p>
+Click on the package to download.
+<p>
+
+<table cellspacing="2" cellpadding="4" border="0" width="100%">
+<tr class='tableheader'>
+        <th valign="top">package</th>
+    <th valign="top">script version</th>
+    <th valign="top">date</th>
+    <th valign="top">Vim version</th>
+    <th valign="top">user</th>
+    <th valign="top">release notes</th>
+</tr>
+<tr>
+        <td class="rowodd" valign="top" nowrap><a href="download_script.php?src_id=13961">vim-fuzzyfinder.zip</a></td>
+    <td class="rowodd" valign="top" nowrap><b>4.2.2</b></td>
+    <td class="rowodd" valign="top" nowrap><i>2010-09-30</i></td>
+    <td class="rowodd" valign="top" nowrap>7.2</td>
+    <td class="rowodd" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="rowodd" valign="top" width="2000">- Fixed a bug that unloaded buffers weren't covered by FufBufferTagAll.</td>
+</tr>
+<tr>
+        <td class="roweven" valign="top" nowrap><a href="download_script.php?src_id=13956">vim-fuzzyfinder.zip</a></td>
+    <td class="roweven" valign="top" nowrap><b>4.2.1</b></td>
+    <td class="roweven" valign="top" nowrap><i>2010-09-29</i></td>
+    <td class="roweven" valign="top" nowrap>7.2</td>
+    <td class="roweven" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="roweven" valign="top" width="2000">- Improved response of Buffer-Tag mode.<br>- Fixed a bug that buffers which had been opened weren't listed in<br>&nbsp;&nbsp;Coverage-File mode<br>- Fixed a bug that tag entries including tab characters weren't parsed<br>&nbsp;&nbsp;correctly in Coverage-File mode<br></td>
+</tr>
+<tr>
+        <td class="rowodd" valign="top" nowrap><a href="download_script.php?src_id=13949">vim-fuzzyfinder.zip</a></td>
+    <td class="rowodd" valign="top" nowrap><b>4.2</b></td>
+    <td class="rowodd" valign="top" nowrap><i>2010-09-28</i></td>
+    <td class="rowodd" valign="top" nowrap>7.2</td>
+    <td class="rowodd" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="rowodd" valign="top" width="2000">- L9 library (<a href="/scripts/script.php?script_id=3252">vimscript #3252</a>) version 1.1 is required.<br>- Added Buffer-Tag mode, inspired by taglist.vim (<a href="/scripts/script.php?script_id=273">vimscript #273</a>).<br>- Added :FufMruFileInCwd command.<br></td>
+</tr>
+<tr>
+        <td class="roweven" valign="top" nowrap><a href="download_script.php?src_id=13941">vim-fuzzyfinder.zip</a></td>
+    <td class="roweven" valign="top" nowrap><b>4.1.1</b></td>
+    <td class="roweven" valign="top" nowrap><i>2010-09-27</i></td>
+    <td class="roweven" valign="top" nowrap>7.2</td>
+    <td class="roweven" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="roweven" valign="top" width="2000">- Fixed a bug causing a error in MRU-File mode.</td>
+</tr>
+<tr>
+        <td class="rowodd" valign="top" nowrap><a href="download_script.php?src_id=13938">vim-fuzzyfinder.zip</a></td>
+    <td class="rowodd" valign="top" nowrap><b>4.1</b></td>
+    <td class="rowodd" valign="top" nowrap><i>2010-09-27</i></td>
+    <td class="rowodd" valign="top" nowrap>7.0</td>
+    <td class="rowodd" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="rowodd" valign="top" width="2000">- Added Bookmark-Dir mode.<br>- Added Bookmark-File mode and removed Bookmark mode.<br>- Changed the filename to store data of Coverage-File mode, from<br>&nbsp;&nbsp;'~/.vim-fuf-data/coveragefile/items' to<br>&nbsp;&nbsp;'~/.vim-fuf-data/coveragefile/coverages' .<br>- Fixed a bug that floating point numbers weren't evaluated correctly and<br>&nbsp;&nbsp;caused errors on some non-English locales.<br>- Removed Around-MRU-File mode and integrated its feature to MRU-File mode.<br></td>
+</tr>
+<tr>
+        <td class="roweven" valign="top" nowrap><a href="download_script.php?src_id=13908">vim-fuzzyfinder.zip</a></td>
+    <td class="roweven" valign="top" nowrap><b>4.0</b></td>
+    <td class="roweven" valign="top" nowrap><i>2010-09-24</i></td>
+    <td class="roweven" valign="top" nowrap>7.2</td>
+    <td class="roweven" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="roweven" valign="top" width="2000">- From this version, L9 library (<a href="/scripts/script.php?script_id=3252">vimscript #3252</a>) is required.<br>- Added Coverage-File mode for users wanting something like TextMate's<br>&nbsp;&nbsp;command-t. (But I've never used it.)<br>- Added Around-MRU-File mode. (Too slow. There is room for improvement.)<br>- Added new feature which deletes selected buffer with FuzzyFinder and<br>&nbsp;&nbsp;g:fuf_buffer_keyDelete option.<br>- Added new feature which allows to set one-time options/variables with<br>&nbsp;&nbsp;fuf#setOneTimeVariables() function.<br>- Added g:fuf_dataDir option and removed g:fuf_infoFile,<br>&nbsp;&nbsp;g:g:fuf_tag_cache_dir, g:fuf_taggedfile_cache_dir, and<br>&nbsp;&nbsp;g:fuf_help_cache_dir options.<br>- Added :FufEditDataFile command and removed :FufEditInfo command.<br>- Added g:fuf_fuzzyRefining option.<br>- Added new feature which is auto-preview and g:fuf_autoPreview option.<br>- Changed the default value of g:fuf_previewHeight to 0 in order to disable<br>&nbsp;&nbsp;preview feature. There is an unfixable problem which is caused by a Vim's<br>&nbsp;&nbsp;bug.<br>- Changed the default value of g:fuf_modesDisable option.<br>- Changed the default value of g:fuf_*_switchOrder options.<br>- Improved speed of changing buffers.<br>- Improved the way to add user-defined mode.<br>- Fixed a bug that FuzzyFinder caused reseting window layout.<br>- Removed g:fuf_smartBs option. Use &lt;C-w&gt; instead.<br></td>
+</tr>
+<tr>
+        <td class="rowodd" valign="top" nowrap><a href="download_script.php?src_id=11852">vim-fuzzyfinder.zip</a></td>
+    <td class="rowodd" valign="top" nowrap><b>3.5</b></td>
+    <td class="rowodd" valign="top" nowrap><i>2009-12-03</i></td>
+    <td class="rowodd" valign="top" nowrap>7.0</td>
+    <td class="rowodd" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="rowodd" valign="top" width="2000">&nbsp;&nbsp;- Added Line mode.<br>&nbsp;&nbsp;- Added Help mode.<br>&nbsp;&nbsp;- Added key mapping to switch between fuzzy matching and partial matching.<br>&nbsp;&nbsp;- Changed the default values of g:fuf_file_exclude for ignoring &quot;*.dll&quot;.<br>&nbsp;&nbsp;- Changed Tag mode and Tagged-File mode to cache parsed data to files in &quot;~/.vim-fuf-cache/&quot;.<br>&nbsp;&nbsp;- Fixed a bug that repeating preview key produced no effect.<br>&nbsp;&nbsp;- Fixed a bug that File mode and Directory mode didn't list items in a directory whose name includes uppercase characters. (Thanks, ryo7000)<br></td>
+</tr>
+<tr>
+        <td class="roweven" valign="top" nowrap><a href="download_script.php?src_id=11769">vim-fuzzyfinder.zip</a></td>
+    <td class="roweven" valign="top" nowrap><b>3.4a</b></td>
+    <td class="roweven" valign="top" nowrap><i>2009-11-20</i></td>
+    <td class="roweven" valign="top" nowrap>7.0</td>
+    <td class="roweven" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="roweven" valign="top" width="2000">- Added new feature which makes it possible to preview selected completion item.<br>- Changed matching rules and added g:fuf_splitPathMatching.<br>- Changed sorting rules.<br>- Changed the default values of g:fuf_file_exclude and g:fuf_dir_exclude in order to ignore &quot;.hg&quot;, &quot;.git&quot;, and &quot;.bzr&quot; directories.<br>- Changed the default value of g:fuf_mrufile_exclude in order to ignore network files (\\*) on Windows and ignore /mnt/* and /media/* on Unix like systems.<br>- Fixed a bug that an exclude pattern of File, Dir, and Callback-File mode can't be changed.<br></td>
+</tr>
+<tr>
+        <td class="rowodd" valign="top" nowrap><a href="download_script.php?src_id=11537">vim-fuzzyfinder.zip</a></td>
+    <td class="rowodd" valign="top" nowrap><b>3.3</b></td>
+    <td class="rowodd" valign="top" nowrap><i>2009-10-17</i></td>
+    <td class="rowodd" valign="top" nowrap>7.0</td>
+    <td class="rowodd" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="rowodd" valign="top" width="2000">- Added Jump-List mode, Change-List mode, and Quickfix mode which enable<br>&nbsp;&nbsp;jumps with jump list, change list, and quickfix list.<br>- Added new feature which deletes selected bookmark with FuzzyFinder and<br>&nbsp;&nbsp;g:fuf_bookmark_keyDelete option.<br>- Changed default values of g:fuf_keyPrevPattern.<br>- Changed to show error message when incompatible with a installed vim.<br></td>
+</tr>
+<tr>
+        <td class="roweven" valign="top" nowrap><a href="download_script.php?src_id=11365">vim-fuzzyfinder.zip</a></td>
+    <td class="roweven" valign="top" nowrap><b>3.2</b></td>
+    <td class="roweven" valign="top" nowrap><i>2009-09-13</i></td>
+    <td class="roweven" valign="top" nowrap>7.0</td>
+    <td class="roweven" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="roweven" valign="top" width="2000">- Added g:fuf_promptHighlight option to integrate such options for each<br>&nbsp;&nbsp;mode.<br>- Changed APIs of Given-File, Given-Directory, Given-Command, Callback-File,<br>&nbsp;&nbsp;and Callback-Item modes to be able to set a prompt string.<br>- Changed default values of g:fuf_keyPrevPattern and g:fuf_keyNextPattern.<br>- Fixed a bug that MRU-File data was not updated When a file was opened with<br>&nbsp;&nbsp;FuzzyFinder.<br>- Fixed a bug with scoring matchings for sorting. Thanks to Vincent.<br>- Brought back the removed feature which is switching to an other mode in<br>&nbsp;&nbsp;FuzzyFinder.<br></td>
+</tr>
+<tr>
+        <td class="rowodd" valign="top" nowrap><a href="download_script.php?src_id=11336">vim-fuzzyfinder.zip</a></td>
+    <td class="rowodd" valign="top" nowrap><b>3.1</b></td>
+    <td class="rowodd" valign="top" nowrap><i>2009-09-07</i></td>
+    <td class="rowodd" valign="top" nowrap>7.0</td>
+    <td class="rowodd" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="rowodd" valign="top" width="2000">- Added new feature to recall patterns which have been entered before from<br>&nbsp;&nbsp;history.<br></td>
+</tr>
+<tr>
+        <td class="roweven" valign="top" nowrap><a href="download_script.php?src_id=11319">vim-fuzzyfinder.zip</a></td>
+    <td class="roweven" valign="top" nowrap><b>3.0</b></td>
+    <td class="roweven" valign="top" nowrap><i>2009-09-04</i></td>
+    <td class="roweven" valign="top" nowrap>7.0</td>
+    <td class="roweven" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="roweven" valign="top" width="2000">- Redesigned the whole plugin for improvements of maintainability and<br>&nbsp;&nbsp;performance. &quot;fuzzyfinder&quot; is abbreviated to &quot;fuf&quot; in the sorce code and<br>&nbsp;&nbsp;filenames. All commands and options are renamed.<br>- Added new feature which is refining pattern.<br>- Improved the rules for sorting completion items. Thanks to the suggestion<br>&nbsp;&nbsp;by Nathan, the rule for boundary matching was implemented.<br>- Changed to open one line buffer of FuzzyFinder with :topleft command<br>&nbsp;&nbsp;instead of :leftabove. The window will alway appear at the top and occupy<br>&nbsp;&nbsp;the full with of the vim window. Thanks to Jan Christoph.<br>- Changed default filename of information file.<br>- Changed MRU-File mode and MRU-Command mode to be disabled by default<br>&nbsp;&nbsp;due to performance and side effect issues.<br>- Removed the feature which is switching to an other mode in FuzzyFinder.<br>- Removed the feature which is temporarily switching 'ignorecase' in<br>&nbsp;&nbsp;FuzzyFinder.<br></td>
+</tr>
+<tr>
+        <td class="rowodd" valign="top" nowrap><a href="download_script.php?src_id=10718">vim-fuzzyfinder.zip</a></td>
+    <td class="rowodd" valign="top" nowrap><b>2.22.3</b></td>
+    <td class="rowodd" valign="top" nowrap><i>2009-06-03</i></td>
+    <td class="rowodd" valign="top" nowrap>7.0</td>
+    <td class="rowodd" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="rowodd" valign="top" width="2000">- Fixed a bug that Fuzzyfinder could not open files with '$' in the name on<br>&nbsp;&nbsp;Windows.</td>
+</tr>
+<tr>
+        <td class="roweven" valign="top" nowrap><a href="download_script.php?src_id=10714">vim-fuzzyfinder.zip</a></td>
+    <td class="roweven" valign="top" nowrap><b>2.22.2</b></td>
+    <td class="roweven" valign="top" nowrap><i>2009-06-02</i></td>
+    <td class="roweven" valign="top" nowrap>7.0</td>
+    <td class="roweven" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="roweven" valign="top" width="2000">- Changed to consider a length of a date/time string when abbreviates long<br>&nbsp;&nbsp;completion items.<br>- Fixed a bug that '**/' pattern did not search for files directly under the<br>&nbsp;&nbsp;current working directory in File mode. Thanks to Martin for reporting.<br></td>
+</tr>
+<tr>
+        <td class="rowodd" valign="top" nowrap><a href="download_script.php?src_id=10677">vim-fuzzyfinder.zip</a></td>
+    <td class="rowodd" valign="top" nowrap><b>2.22.1</b></td>
+    <td class="rowodd" valign="top" nowrap><i>2009-05-25</i></td>
+    <td class="rowodd" valign="top" nowrap>7.0</td>
+    <td class="rowodd" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="rowodd" valign="top" width="2000">- Fixed a bug that Fuzzyfinder could not expand abbreviations to patterns<br>&nbsp;&nbsp;including '&#039 correctly.<br>- Fixed to show item number in Given-File, Given-Directory, and<br>&nbsp;&nbsp;Given-Command mode.<br></td>
+</tr>
+<tr>
+        <td class="roweven" valign="top" nowrap><a href="download_script.php?src_id=10639">vim-fuzzyfinder.zip</a></td>
+    <td class="roweven" valign="top" nowrap><b>2.22.0</b></td>
+    <td class="roweven" valign="top" nowrap><i>2009-05-20</i></td>
+    <td class="roweven" valign="top" nowrap>7.0</td>
+    <td class="roweven" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="roweven" valign="top" width="2000">- More improved the abbreviation method for long completion items.<br>- Added Given-File mode for third-party script to select a file from a given<br>&nbsp;&nbsp;list and open.<br>- Added Given-Directory mode for third-party script to select a directory<br>&nbsp;&nbsp;from a given list and change current working directory to it.<br>- Added Given-Command mode for third-party script to select a command from a<br>&nbsp;&nbsp;given list and execute.<br>- Changed ways to launch Callback-File mode and Callback-item mode.<br></td>
+</tr>
+<tr>
+        <td class="rowodd" valign="top" nowrap><a href="download_script.php?src_id=10588">vim-fuzzyfinder.zip</a></td>
+    <td class="rowodd" valign="top" nowrap><b>2.21.0</b></td>
+    <td class="rowodd" valign="top" nowrap><i>2009-05-13</i></td>
+    <td class="rowodd" valign="top" nowrap>7.0</td>
+    <td class="rowodd" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="rowodd" valign="top" width="2000">- Improved a method of trimming long completion items. Thanks to Andy,<br>&nbsp;&nbsp;pyrhockz, and Nathan.<br>- Changed not to map command-line &lt;CR&gt; for MRU-Command mode if<br>&nbsp;&nbsp;g:FuzzyFinderOptions.MruCmd.mode_available is set 0 before loading<br>&nbsp;&nbsp;fuzzyfinder.vim.<br>- Added Callback-File mode and Callback-Item mode for third-party script to<br>&nbsp;&nbsp;find a file/directory or an item from a given list using Fuzzyfinder.<br>- Changed not to append &quot;..&quot; to a completion menu in File/Directory mode.<br>&nbsp;&nbsp;Use dot sequence feature.<br>- Changed default value of g:FuzzyFinderOptions.File.excluded_path option.<br>- Changed default value of g:FuzzyFinderOptions.Dir.excluded_path option.<br>- Fixed a bug that couldn't jump to a tag. Thanks to Thinca.<br></td>
+</tr>
+<tr>
+        <td class="roweven" valign="top" nowrap><a href="download_script.php?src_id=10480">vim-fuzzyfinder.zip</a></td>
+    <td class="roweven" valign="top" nowrap><b>2.20</b></td>
+    <td class="roweven" valign="top" nowrap><i>2009-04-28</i></td>
+    <td class="roweven" valign="top" nowrap>7.0</td>
+    <td class="roweven" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="roweven" valign="top" width="2000">- Added help files which are doc/fuzzyfinder.txt and doc/fuzzyfinder.jax.<br>- Fixed a bug that an error occurs if current directory included spaces.<br>&nbsp;&nbsp;Thanks id:cho45 and id:secondlife.<br>- Implemented a feature to reuse a window containing target buffer.<br>- Added g:FuzzyFinderOptions.Buffer.reuse_window option.<br>- Added g:FuzzyFinderOptions.File.reuse_window option.<br>- Added g:FuzzyFinderOptions.MruFile.reuse_window option.<br>- Added g:FuzzyFinderOptions.Bookmark.reuse_window option.<br>- Added g:FuzzyFinderOptions.TaggedFile.reuse_window option.<br>- Changed to use 'omnifunc' instead of 'completefunc'. Now you can use &lt;C-u&gt;<br>&nbsp;&nbsp;to delete all entered characters.<br>- Changed default value of g:FuzzyFinderOptions.Base.key_open_tab option.<br>- Changed default value of g:FuzzyFinderOptions.Base.key_next_mode option.<br>- Changed default value of g:FuzzyFinderOptions.Base.key_prev_mode option.<br>- Changed default value of g:FuzzyFinderOptions.Base.key_ignore_case option.<br>- Changed to truncate long completion items from the head instead of tail.<br>- Added g:FuzzyFinderOptions.Base.max_menu_width option instead of<br>&nbsp;&nbsp;g:FuzzyFinderOptions.Base.trim_length option.<br>- Added :FuzzyFinderFileWithFullCwd command.<br>- Added :FuzzyFinderFileWithCurrentBufferDir command.<br>- Added :FuzzyFinderDirWithFullCwd command.<br>- Added :FuzzyFinderDirWithCurrentBufferDir command.<br>- Added :FuzzyFinderTagWithCursorWord command.<br>- Renamed :FuzzyFinderRemoveCache command to :FuzzyFinderRenewCache.<br></td>
+</tr>
+<tr>
+        <td class="rowodd" valign="top" nowrap><a href="download_script.php?src_id=9814">fuzzyfinder.vim</a></td>
+    <td class="rowodd" valign="top" nowrap><b>2.19</b></td>
+    <td class="rowodd" valign="top" nowrap><i>2009-01-14</i></td>
+    <td class="rowodd" valign="top" nowrap>7.0</td>
+    <td class="rowodd" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="rowodd" valign="top" width="2000">- Changed MRU-File mode that always formats completion items to be<br>&nbsp;&nbsp;relative to the home directory.<br>- Fixed a bug that a file was opened in an unintended window with Tag<br>&nbsp;&nbsp;List plugin. Thanks Alexey.<br>- Fixed a bug that garbage characters were entered when switched current<br>&nbsp;&nbsp;mode. Thanks id:lugecy.<br></td>
+</tr>
+<tr>
+        <td class="roweven" valign="top" nowrap><a href="download_script.php?src_id=9808">fuzzyfinder.vim</a></td>
+    <td class="roweven" valign="top" nowrap><b>2.18</b></td>
+    <td class="roweven" valign="top" nowrap><i>2009-01-13</i></td>
+    <td class="roweven" valign="top" nowrap>7.0</td>
+    <td class="roweven" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="roweven" valign="top" width="2000">- Improved rules for the sorting of completion items.<br>- Changed not to learn a completion if an entered pattern is empty.<br>- Fixed a bug that Buffer mode did not work. Thanks ryo7000.<br></td>
+</tr>
+<tr>
+        <td class="rowodd" valign="top" nowrap><a href="download_script.php?src_id=9798">fuzzyfinder.vim</a></td>
+    <td class="rowodd" valign="top" nowrap><b>2.17</b></td>
+    <td class="rowodd" valign="top" nowrap><i>2009-01-11</i></td>
+    <td class="rowodd" valign="top" nowrap>6.0</td>
+    <td class="rowodd" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="rowodd" valign="top" width="2000">- Introduced a learning system for the sorting of completion items.<br>- Added g:FuzzyFinderOptions.Base.learning_limit option.<br>- Changed the specification of the information file. Please remove your<br>&nbsp;&nbsp;information file for Fuzzyfinder.<br></td>
+</tr>
+<tr>
+        <td class="roweven" valign="top" nowrap><a href="download_script.php?src_id=9643">fuzzyfinder.vim</a></td>
+    <td class="roweven" valign="top" nowrap><b>2.16</b></td>
+    <td class="roweven" valign="top" nowrap><i>2008-12-10</i></td>
+    <td class="roweven" valign="top" nowrap>7.0</td>
+    <td class="roweven" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="roweven" valign="top" width="2000">- Improved response time by caching in MRU-File mode.<br>- Fixed a bug in Bookmark mode that Fuzzyfinder did not jump to the<br>&nbsp;&nbsp;Bookmarked line number when Bookmarked pattern was not found.<br></td>
+</tr>
+<tr>
+        <td class="rowodd" valign="top" nowrap><a href="download_script.php?src_id=9623">fuzzyfinder.vim</a></td>
+    <td class="rowodd" valign="top" nowrap><b>2.15</b></td>
+    <td class="rowodd" valign="top" nowrap><i>2008-12-06</i></td>
+    <td class="rowodd" valign="top" nowrap>7.0</td>
+    <td class="rowodd" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="rowodd" valign="top" width="2000">- Added Bookmark mode.<br>- Removed Favorite-file mode. Use Bookmark mode instead.<br>- Fixed not to record a entry of input() in MRU-Command mode.<br></td>
+</tr>
+<tr>
+        <td class="roweven" valign="top" nowrap><a href="download_script.php?src_id=9599">fuzzyfinder.vim</a></td>
+    <td class="roweven" valign="top" nowrap><b>2.14</b></td>
+    <td class="roweven" valign="top" nowrap><i>2008-12-02</i></td>
+    <td class="roweven" valign="top" nowrap>7.0</td>
+    <td class="roweven" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="roweven" valign="top" width="2000">- Changed to show buffer status in Buffer mode.<br>- Fixed a bug that an error occurs when nonexistent buffer-name was<br>&nbsp;&nbsp;entered in Buffer mode. Thanks Maxim Kim.<br>- Added 'enumerating_limit' option. Thanks id:secondlife.<br>- Removed 'matching_limit' option. Use 'enumerating_limit' instead.<br></td>
+</tr>
+<tr>
+        <td class="rowodd" valign="top" nowrap><a href="download_script.php?src_id=9306">fuzzyfinder.vim</a></td>
+    <td class="rowodd" valign="top" nowrap><b>2.13</b></td>
+    <td class="rowodd" valign="top" nowrap><i>2008-10-04</i></td>
+    <td class="rowodd" valign="top" nowrap>7.0</td>
+    <td class="rowodd" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="rowodd" valign="top" width="2000">- Fixed a bug that a directory disappeared when a file in that directroy<br>&nbsp;&nbsp;was being opened in File/Mru-File mode.<br></td>
+</tr>
+<tr>
+        <td class="roweven" valign="top" nowrap><a href="download_script.php?src_id=9246">fuzzyfinder.vim</a></td>
+    <td class="roweven" valign="top" nowrap><b>2.12</b></td>
+    <td class="roweven" valign="top" nowrap><i>2008-09-13</i></td>
+    <td class="roweven" valign="top" nowrap>7.0</td>
+    <td class="roweven" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="roweven" valign="top" width="2000">- Changed to be able to show completion items in the order of recently<br>&nbsp;&nbsp;used in Buffer mode.<br>- Added g:FuzzyFinderOptions.Buffer.mru_order option.<br></td>
+</tr>
+<tr>
+        <td class="rowodd" valign="top" nowrap><a href="download_script.php?src_id=9240">fuzzyfinder.vim</a></td>
+    <td class="rowodd" valign="top" nowrap><b>2.11</b></td>
+    <td class="rowodd" valign="top" nowrap><i>2008-09-10</i></td>
+    <td class="rowodd" valign="top" nowrap>7.0</td>
+    <td class="rowodd" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="rowodd" valign="top" width="2000">- Changed that a dot sequence of entered pattern is expanded to parent<br>&nbsp;&nbsp;directroies in File/Dir mode.<br>&nbsp;&nbsp;E.g.: &quot;foo/...bar&quot; -&gt; &quot;foo/../../bar&quot;<br>- Fixed a bug that a prompt string was excessively inserted.<br></td>
+</tr>
+<tr>
+        <td class="roweven" valign="top" nowrap><a href="download_script.php?src_id=9233">fuzzyfinder.vim</a></td>
+    <td class="roweven" valign="top" nowrap><b>2.10</b></td>
+    <td class="roweven" valign="top" nowrap><i>2008-09-09</i></td>
+    <td class="roweven" valign="top" nowrap>7.0</td>
+    <td class="roweven" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="roweven" valign="top" width="2000">- Changed not to show a current buffer in a completion menu.<br>- Fixed a bug that a filename to open was not been escaped.<br>- Added 'prompt' option.<br>- Added 'prompt_highlight' option.<br>- Removed g:FuzzyFinderOptions.MruFile.no_special_buffer option.<br></td>
+</tr>
+<tr>
+        <td class="rowodd" valign="top" nowrap><a href="download_script.php?src_id=9227">fuzzyfinder.vim</a></td>
+    <td class="rowodd" valign="top" nowrap><b>2.9</b></td>
+    <td class="rowodd" valign="top" nowrap><i>2008-09-05</i></td>
+    <td class="rowodd" valign="top" nowrap>7.0</td>
+    <td class="rowodd" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="rowodd" valign="top" width="2000">- Enhanced &lt;BS&gt; behavior in Fuzzyfinder and added 'smart_bs' option.<br>- Fixed a bug that entered pattern was not been escaped.<br>- Fixed not to insert &quot;zv&quot; with &quot;c/pattern&lt;CR&gt;&quot; command in Normal mode<br>- Avoid the slow down problem caused by filereadable() check for the MRU<br>&nbsp;&nbsp;information in BufEnter/BufWritePost.<br></td>
+</tr>
+<tr>
+        <td class="roweven" valign="top" nowrap><a href="download_script.php?src_id=9172">fuzzyfinder.vim</a></td>
+    <td class="roweven" valign="top" nowrap><b>2.8.1</b></td>
+    <td class="roweven" valign="top" nowrap><i>2008-08-25</i></td>
+    <td class="roweven" valign="top" nowrap>7.0</td>
+    <td class="roweven" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="roweven" valign="top" width="2000">- Fixed a bug caused by the non-escaped buffer name &quot;[Fuzzyfinder]&quot;.<br>- Fixed a command to open in a new tab page in Buffer mode.<br></td>
+</tr>
+<tr>
+        <td class="rowodd" valign="top" nowrap><a href="download_script.php?src_id=8964">fuzzyfinder.vim</a></td>
+    <td class="rowodd" valign="top" nowrap><b>2.8</b></td>
+    <td class="rowodd" valign="top" nowrap><i>2008-07-17</i></td>
+    <td class="rowodd" valign="top" nowrap>7.0</td>
+    <td class="rowodd" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="rowodd" valign="top" width="2000">- Added 'trim_length' option.<br>- Added 'switch_order' option.<br>- Fixed a bug that entered command did not become the newest in the<br>&nbsp;&nbsp;history.<br>- Fixed a bug that folds could not open with &lt;CR&gt; in a command-line when<br>&nbsp;&nbsp;searching.<br>- Removed 'excluded_indicator' option. Now a completion list in Buffer<br>&nbsp;&nbsp;mode is the same as a result of :buffers.<br></td>
+</tr>
+<tr>
+        <td class="roweven" valign="top" nowrap><a href="download_script.php?src_id=8950">fuzzyfinder.vim</a></td>
+    <td class="roweven" valign="top" nowrap><b>2.7</b></td>
+    <td class="roweven" valign="top" nowrap><i>2008-07-14</i></td>
+    <td class="roweven" valign="top" nowrap>7.0</td>
+    <td class="roweven" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="roweven" valign="top" width="2000">- Changed to find an item whose index is matched with the number<br>&nbsp;&nbsp;suffixed with entered pattern.<br>- Fixed the cache bug after changing current directroy in File mode.<br></td>
+</tr>
+<tr>
+        <td class="rowodd" valign="top" nowrap><a href="download_script.php?src_id=8908">fuzzyfinder.vim</a></td>
+    <td class="rowodd" valign="top" nowrap><b>2.6.2</b></td>
+    <td class="rowodd" valign="top" nowrap><i>2008-07-08</i></td>
+    <td class="rowodd" valign="top" nowrap>7.0</td>
+    <td class="rowodd" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="rowodd" valign="top" width="2000">- Fixed not to miss changes in options when updates the MRU information.</td>
+</tr>
+<tr>
+        <td class="roweven" valign="top" nowrap><a href="download_script.php?src_id=8895">fuzzyfinder.vim</a></td>
+    <td class="roweven" valign="top" nowrap><b>2.6.1</b></td>
+    <td class="roweven" valign="top" nowrap><i>2008-07-07</i></td>
+    <td class="roweven" valign="top" nowrap>7.0</td>
+    <td class="roweven" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="roweven" valign="top" width="2000">- Fixed a bug related to floating-point support.<br>- Added support for GetLatestVimScripts.<br></td>
+</tr>
+<tr>
+        <td class="rowodd" valign="top" nowrap><a href="download_script.php?src_id=8500">fuzzyfinder.vim</a></td>
+    <td class="rowodd" valign="top" nowrap><b>2.6</b></td>
+    <td class="rowodd" valign="top" nowrap><i>2008-03-28</i></td>
+    <td class="rowodd" valign="top" nowrap>7.0</td>
+    <td class="rowodd" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="rowodd" valign="top" width="2000">- Revived MRU-command mode. The problem with a command-line abbreviation<br>&nbsp;&nbsp;was solved.<br>- Changed the specification of the information file.<br>- Added :FuzzyFinderEditInfo command.<br></td>
+</tr>
+<tr>
+        <td class="roweven" valign="top" nowrap><a href="download_script.php?src_id=8485">fuzzyfinder.vim</a></td>
+    <td class="roweven" valign="top" nowrap><b>2.5.1</b></td>
+    <td class="roweven" valign="top" nowrap><i>2008-03-22</i></td>
+    <td class="roweven" valign="top" nowrap>7.0</td>
+    <td class="roweven" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="roweven" valign="top" width="2000">- Fixed to be able to match &quot;foo/./bar&quot; by &quot;foo/**/bar&quot; in File mode.<br>- Fixed to be able to open a space-containing file in File mode.<br>- Fixed to honor the current working directory properly in File mode.<br></td>
+</tr>
+<tr>
+        <td class="rowodd" valign="top" nowrap><a href="download_script.php?src_id=8327">fuzzyfinder.vim</a></td>
+    <td class="rowodd" valign="top" nowrap><b>2.5</b></td>
+    <td class="rowodd" valign="top" nowrap><i>2008-02-22</i></td>
+    <td class="rowodd" valign="top" nowrap>7.0</td>
+    <td class="rowodd" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="rowodd" valign="top" width="2000">- Fixed the bug that a wrong initial text is entered after switching to a<br>&nbsp;&nbsp;next mode.<br>- Fixed the bug that it does not return to previous window after leaving<br>&nbsp;&nbsp;Fuzzyfinder one.<br></td>
+</tr>
+<tr>
+        <td class="roweven" valign="top" nowrap><a href="download_script.php?src_id=8315">fuzzyfinder.vim</a></td>
+    <td class="roweven" valign="top" nowrap><b>2.4</b></td>
+    <td class="roweven" valign="top" nowrap><i>2008-02-20</i></td>
+    <td class="roweven" valign="top" nowrap>7.0</td>
+    <td class="roweven" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="roweven" valign="top" width="2000">- Fixed the bug that Fuzzyfinder fails to open a file caused by auto-cd<br>&nbsp;&nbsp;plugin/script.<br></td>
+</tr>
+<tr>
+        <td class="rowodd" valign="top" nowrap><a href="download_script.php?src_id=8308">fuzzyfinder.vim</a></td>
+    <td class="rowodd" valign="top" nowrap><b>2.3</b></td>
+    <td class="rowodd" valign="top" nowrap><i>2008-02-19</i></td>
+    <td class="rowodd" valign="top" nowrap>7.0</td>
+    <td class="rowodd" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="rowodd" valign="top" width="2000">- Added a key mapping to open items in a new tab page and<br>&nbsp;&nbsp;g:FuzzyFinderOptions.Base.key_open_tab opton.<br>- Changed to show Fuzzyfinder window above last window even if<br>&nbsp;&nbsp;'splitbelow' was set.<br>- Changed to set nocursorline and nocursorcolumn in Fuzzyfinder.<br>- Fixed not to push up a buffer number unlimitedly.<br></td>
+</tr>
+<tr>
+        <td class="roweven" valign="top" nowrap><a href="download_script.php?src_id=8299">fuzzyfinder.vim</a></td>
+    <td class="roweven" valign="top" nowrap><b>2.2</b></td>
+    <td class="roweven" valign="top" nowrap><i>2008-02-18</i></td>
+    <td class="roweven" valign="top" nowrap>7.0</td>
+    <td class="roweven" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="roweven" valign="top" width="2000">- Added new feature, which is the partial matching.<br>- Fixed the bug that an error occurs when &quot;'&quot; was entered.<br></td>
+</tr>
+<tr>
+        <td class="rowodd" valign="top" nowrap><a href="download_script.php?src_id=8291">fuzzyfinder.vim</a></td>
+    <td class="rowodd" valign="top" nowrap><b>2.1</b></td>
+    <td class="rowodd" valign="top" nowrap><i>2008-02-17</i></td>
+    <td class="rowodd" valign="top" nowrap>7.0</td>
+    <td class="rowodd" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="rowodd" valign="top" width="2000">- Restructured the option system AGAIN. Sorry :p<br>- Changed to inherit a typed text when switching a mode without leaving<br>&nbsp;&nbsp;a insert mode.<br>- Changed commands which launch explorers to be able to take a argument<br>&nbsp;&nbsp;for initial text.<br>- Changed to complete file names by relative path and not full path in<br>&nbsp;&nbsp;the buffer/mru-file/tagged-file mode.<br>- Changed to highlight a typed text when the completion item was not<br>&nbsp;&nbsp;found or the completion process was aborted.<br>- Changed to create caches for each tag file and not working directory<br>&nbsp;&nbsp;in the tag/tagged-file mode.<br>- Fixed the bug that the buffer mode couldn't open a unnamed buffer.<br>- Added 'matching_limit' option.<br>- Removed 'max_match' option. Use 'matching_limit' option instead.<br>- Removed 'initial_text' option. Use command argument instead.<br>- Removed the MRU-command mode.<br></td>
+</tr>
+<tr>
+        <td class="roweven" valign="top" nowrap><a href="download_script.php?src_id=8118">fuzzyfinder.vim</a></td>
+    <td class="roweven" valign="top" nowrap><b>2.0</b></td>
+    <td class="roweven" valign="top" nowrap><i>2008-01-03</i></td>
+    <td class="roweven" valign="top" nowrap>7.0</td>
+    <td class="roweven" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="roweven" valign="top" width="2000">- Added the tag mode.<br>- Added the tagged-file mode.<br>- Added :FuzzyFinderRemoveCache command.<br>- Restructured the option system. many options are changed names or<br>&nbsp;&nbsp;default values of some options.<br>- Changed to hold and reuse caches of completion lists by default.<br>- Changed to set filetype 'fuzzyfinder'.<br>- Disabled the MRU-command mode by default because there are problems.<br>- Removed FuzzyFinderAddMode command.</td>
+</tr>
+<tr>
+        <td class="rowodd" valign="top" nowrap><a href="download_script.php?src_id=7906">fuzzyfinder.vim</a></td>
+    <td class="rowodd" valign="top" nowrap><b>1.5</b></td>
+    <td class="rowodd" valign="top" nowrap><i>2007-11-09</i></td>
+    <td class="rowodd" valign="top" nowrap>7.0</td>
+    <td class="rowodd" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="rowodd" valign="top" width="2000">- Added the directory mode.<br>- Fixed the bug that it caused an error when switch a mode in the<br>&nbsp;&nbsp;insert mode.<br>- Changed g:FuzzyFinder_KeySwitchMode type to a list.<br></td>
+</tr>
+<tr>
+        <td class="roweven" valign="top" nowrap><a href="download_script.php?src_id=7822">fuzzyfinder.vim</a></td>
+    <td class="roweven" valign="top" nowrap><b>1.4.1</b></td>
+    <td class="roweven" valign="top" nowrap><i>2007-10-24</i></td>
+    <td class="roweven" valign="top" nowrap>7.0</td>
+    <td class="roweven" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="roweven" valign="top" width="2000">- Changed the specification of the information file.<br>- Added the MRU-commands mode.<br>- Renamed :FuzzyFinderAddFavorite command to :FuzzyFinderAddFavFile.<br>- Renamed g:FuzzyFinder_MruModeVars option to<br>&nbsp;&nbsp;g:FuzzyFinder_MruFileModeVars.<br>- Renamed g:FuzzyFinder_FavoriteModeVars option to<br>&nbsp;&nbsp;g:FuzzyFinder_FavFileModeVars.<br>- Changed to show registered time of each item in MRU/favorite mode.<br>- Added 'timeFormat' option for MRU/favorite modes. </td>
+</tr>
+<tr>
+        <td class="rowodd" valign="top" nowrap><a href="download_script.php?src_id=7811">fuzzyfinder.vim</a></td>
+    <td class="rowodd" valign="top" nowrap><b>1.3</b></td>
+    <td class="rowodd" valign="top" nowrap><i>2007-10-19</i></td>
+    <td class="rowodd" valign="top" nowrap>7.0</td>
+    <td class="rowodd" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="rowodd" valign="top" width="2000">- Fixed a handling of multi-byte characters.</td>
+</tr>
+<tr>
+        <td class="roweven" valign="top" nowrap><a href="download_script.php?src_id=7800">fuzzyfinder.vim</a></td>
+    <td class="roweven" valign="top" nowrap><b>1.2</b></td>
+    <td class="roweven" valign="top" nowrap><i>2007-10-16</i></td>
+    <td class="roweven" valign="top" nowrap>7.0</td>
+    <td class="roweven" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="roweven" valign="top" width="2000">- Added support for Migemo. (Migemo is Japanese search method.)<br></td>
+</tr>
+<tr>
+        <td class="rowodd" valign="top" nowrap><a href="download_script.php?src_id=7794">fuzzyfinder.vim</a></td>
+    <td class="rowodd" valign="top" nowrap><b>1.1</b></td>
+    <td class="rowodd" valign="top" nowrap><i>2007-10-14</i></td>
+    <td class="rowodd" valign="top" nowrap>7.0</td>
+    <td class="rowodd" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="rowodd" valign="top" width="2000">- Added the favorite mode.<br>- Added new features, which are abbreviations and multiple search.<br>- Added 'abbrevMap' option for each mode.<br>- Added g:FuzzyFinder_MruModeVars['ignoreSpecialBuffers'] option.<br>- Fixed the bug that it did not work correctly when a user have mapped<br>&nbsp;&nbsp;&lt;C-p&gt; or &lt;Down&gt;.<br></td>
+</tr>
+<tr>
+        <td class="roweven" valign="top" nowrap><a href="download_script.php?src_id=7767">fuzzyfinder.vim</a></td>
+    <td class="roweven" valign="top" nowrap><b>1.0</b></td>
+    <td class="roweven" valign="top" nowrap><i>2007-10-08</i></td>
+    <td class="roweven" valign="top" nowrap>7.0</td>
+    <td class="roweven" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="roweven" valign="top" width="2000">- Added the MRU mode.<br>- Added commands to add and use original mode.<br>- Improved the sorting algorithm for completion items.<br>- Added 'initialInput' option to automatically insert a text at the<br>&nbsp;&nbsp;beginning of a mode.<br>- Changed that 'excludedPath' option works for the entire path.<br>- Renamed some options. <br>- Changed default values of some options. <br>- Packed the mode-specific options to dictionaries.<br>- Removed some options.<br></td>
+</tr>
+<tr>
+        <td class="rowodd" valign="top" nowrap><a href="download_script.php?src_id=7664">fuzzyfinder.vim</a></td>
+    <td class="rowodd" valign="top" nowrap><b>0.6</b></td>
+    <td class="rowodd" valign="top" nowrap><i>2007-09-12</i></td>
+    <td class="rowodd" valign="top" nowrap>7.0</td>
+    <td class="rowodd" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="rowodd" valign="top" width="2000">- Fixed some bugs.</td>
+</tr>
+<tr>
+        <td class="roweven" valign="top" nowrap><a href="download_script.php?src_id=7647">fuzzyfinder.vim</a></td>
+    <td class="roweven" valign="top" nowrap><b>0.5</b></td>
+    <td class="roweven" valign="top" nowrap><i>2007-09-11</i></td>
+    <td class="roweven" valign="top" nowrap>7.0</td>
+    <td class="roweven" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="roweven" valign="top" width="2000">- Improved response by aborting processing too many items.<br>- Changed to be able to open a buffer/file not only in previous<br>&nbsp;&nbsp;window but also in new window.<br>- Fixed a bug that recursive searching with '**' does not work.<br>- Added g:FuzzyFinder_CompletionItemLimit option.<br>- Added g:FuzzyFinder_KeyOpen option.<br></td>
+</tr>
+<tr>
+        <td class="rowodd" valign="top" nowrap><a href="download_script.php?src_id=7626">fuzzyfinder.vim</a></td>
+    <td class="rowodd" valign="top" nowrap><b>0.4</b></td>
+    <td class="rowodd" valign="top" nowrap><i>2007-09-07</i></td>
+    <td class="rowodd" valign="top" nowrap>7.0</td>
+    <td class="rowodd" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="rowodd" valign="top" width="2000">- Improved response of the input.<br>- Improved the sorting algorithm for completion items. It is based<br>&nbsp;&nbsp;on the matching level. 1st is perfect matching, 2nd is prefix<br>&nbsp;&nbsp;matching, and 3rd is fuzzy matching.<br>- Added g:FuzzyFinder_ExcludePattern option.<br>- Removed g:FuzzyFinder_WildIgnore option.<br>- Removed g:FuzzyFinder_EchoPattern option.<br>- Removed g:FuzzyFinder_PathSeparator option.<br>- Changed the default value of g:FuzzyFinder_MinLengthFile from 1 to<br>&nbsp;&nbsp;0.<br></td>
+</tr>
+<tr>
+        <td class="roweven" valign="top" nowrap><a href="download_script.php?src_id=7486">fuzzyfinder.vim</a></td>
+    <td class="roweven" valign="top" nowrap><b>0.3</b></td>
+    <td class="roweven" valign="top" nowrap><i>2007-08-10</i></td>
+    <td class="roweven" valign="top" nowrap>7.0</td>
+    <td class="roweven" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="roweven" valign="top" width="2000">- Added g:FuzzyFinder_IgnoreCase option.<br>- Added g:FuzzyFinder_KeyToggleIgnoreCase option.<br>- Added g:FuzzyFinder_EchoPattern option.<br>- Changed the open command in a buffer mode from &quot;:edit&quot; to<br>&quot;:buffer&quot; to avoid being reset cursor position.<br>- Changed the default value of g:FuzzyFinder_KeyToggleMode from<br>&lt;C-Space&gt; to &lt;F12&gt; because &lt;C-Space&gt; does not work on some CUI<br>environments.<br>- Changed to avoid being loaded by Vim before 7.0.<br>- Fixed a bug with making a fuzzy pattern which has '&#039.<br></td>
+</tr>
+<tr>
+        <td class="rowodd" valign="top" nowrap><a href="download_script.php?src_id=7477">fuzzyfinder.vim</a></td>
+    <td class="rowodd" valign="top" nowrap><b>0.2</b></td>
+    <td class="rowodd" valign="top" nowrap><i>2007-08-09</i></td>
+    <td class="rowodd" valign="top" nowrap>7.0</td>
+    <td class="rowodd" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="rowodd" valign="top" width="2000">A bug it does not work on Linux is fixed.</td>
+</tr>
+<tr>
+        <td class="roweven" valign="top" nowrap><a href="download_script.php?src_id=7467">fuzzyfinder.vim</a></td>
+    <td class="roweven" valign="top" nowrap><b>0.1</b></td>
+    <td class="roweven" valign="top" nowrap><i>2007-08-08</i></td>
+    <td class="roweven" valign="top" nowrap>7.0</td>
+    <td class="roweven" valign="top"><i><a href="/account/profile.php?user_id=12324">Takeshi NISHIDA</a></i></td>
+    <td class="roweven" valign="top" width="2000">Initial upload</td>
+</tr>
+</table>
+<!-- finish off the framework -->
+          </td>
+        </tr>
+      </table>
+    </td>
+
+  </tr>
+</table>
+
+<!-- END OF THE PAGE BODY: BETWEEN HEADER AND FOOTER -->
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" bordercolor="red">
+  <tr><td colspan="4"><img src="/images/spacer.gif" width="1" height="5" alt=""></td></tr>
+  <tr><td colspan="4" bgcolor="#000000"><img src="/images/spacer.gif" height="2" width="1" alt=""></td></tr>
+  <tr><td colspan="4"><img src="/images/spacer.gif" width="1" height="5" alt=""></td></tr>
+  <tr>
+    <td><img src="/images/spacer.gif" width="5" height="1" alt=""></td>
+
+    <td align="left" valign="top"><small>
+      If you have questions or remarks about this site, visit the
+      <a href="http://vimonline.sf.net">vimonline development</a> pages.
+      Please use this site responsibly.
+      <br> 
+      
+      Questions about <a href="http://www.vim.org/about.php">Vim</a> should go
+      to the <a href="http://www.vim.org/maillist.php">maillist</a>.
+      Help Bram <a href="http://iccf-holland.org/">help Uganda</a>.
+      </small>
+	&nbsp;
+	&nbsp;
+
+	<!-- Start of StatCounter Code -->
+	<script type="text/javascript" language="javascript">
+	var sc_project=1417324; 
+	var sc_invisible=1; 
+	var sc_partition=11; 
+	var sc_security="d41633bc"; 
+	</script>
+
+	<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/counter.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c12.statcounter.com/counter.php?sc_project=1417324&java=0&security=d41633bc&invisible=0" alt="free tracking" border="0"></a> </noscript>
+	<!-- End of StatCounter Code -->
+          </td>
+
+    <td align="right" valign="top">
+      		<a href="http://sourceforge.net/projects/vim" rel="nofollow"><img src="http://sflogo.sourceforge.net/sflogo.php?group_id=8&type=1" width="88" height="31" border="0" alt="SourceForge.net Logo" /></a>
+    </td>
+
+    <td><img src="/images/spacer.gif" width="5" height="1" alt=""></td>
+  </tr>
+
+    
+  <tr><td colspan="4"><img src="/images/spacer.gif" width="1" height="5" alt=""></td>
+  
+  </tr>
+</table>
+
+<!-- for Google +1 button -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+</body>
+</html>
+
