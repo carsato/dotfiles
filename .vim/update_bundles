@@ -25,15 +25,22 @@ git_bundles = [
   "git://github.com/tsaleh/vim-tmux.git"            ,
   "git://github.com/vim-ruby/vim-ruby.git"          ,
   "git://github.com/vim-scripts/Gist.vim.git"       ,
-	"http://github.com/ervandew/supertab "            ,
+	"http://github.com/tomtom/checksyntax_vim"            ,
 ]
 
 vim_org_scripts = [
-  ["IndexedSearch" , "7062"  , "plugin"  ] ,
-  ["jquery"        , "12107" , "syntax"  ] ,
-	["FuzzyFinder"   , "1984"  , "utility" ] ,
-	["vim-l9"        , "3252"  , "utility" ] ,
-	["vim-taglist"   , "273"   , "utility" ] ,
+	#["", "" , ""],
+	["phpfolding"     , "1623"  , "utility" ] ,
+	["php"            , "1571"  , "syntax"  ] ,
+  ["IndexedSearch"  , "7062"  , "plugin"  ] ,
+  ["jquery"         , "12107" , "syntax"  ] ,
+	["FuzzyFinder"    , "1984"  , "utility" ] ,
+	["vim-l9"         , "3252"  , "utility" ] ,
+	["vim-taglist"    , "273"   , "utility" ] ,
+	["SearchComplete" , "474"   , "utility" ] ,
+	["sqlcomplete"    , "1572"  , "utility" ] ,
+	["nerdcommenter"  , "1218"  , "utility" ] ,
+  ["bufexplorer"    , "42"    , "utility" ] ,
 ]
 
 require 'fileutils'
@@ -43,10 +50,8 @@ bundles_dir = File.join(File.dirname(__FILE__), "bundle")
 
 FileUtils.cd(bundles_dir)
 
-=begin
 puts "trashing everything (lookout!)"
 Dir["*"].each {|d| FileUtils.rm_rf d }
-=end
 
 git_bundles.each do |url|
   dir = url.split('/').last.sub(/\.git$/, '')
