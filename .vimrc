@@ -1,51 +1,73 @@
-call pathogen#infect() 
+" Environment {
+	" Basics {
+		set nocompatible " must be first line
+		set background=dark " Assume a dark background
+	" }
+	
+	" Windows Compatible {
+	" On Windows, also use '.vim' instead of 'vimfiles'; this makes synchronization
+	" across (heterogeneous) systems easier.
+	if has('win32') || has('win64')
+		set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+	endif
+	" }
+	"
+	" Setup Bundle Support {
+	" The next two lines ensure that the ~/.vim/bundle/ system works
+		runtime! autoload/pathogen.vim
+		silent! call pathogen#helptags()
+		silent! call pathogen#runtime_append_all_bundles()
+		"silent! call pathogen#infect()
+	" }
+	
+" }
 
-syntax on
-filetype plugin indent on
-set expandtab
+"basics
 set tabstop=2
-set shiftwidth=2
-set autoindent
-set smartindent
 set number
-set ruler
+set smartindent
+set autoindent
 
-if has("autocmd")
-  " Drupal *.module and *.install files.
-  augroup module
-    autocmd BufRead,BufNewFile *.module set filetype=php
-    autocmd BufRead,BufNewFile *.install set filetype=php
-    autocmd BufRead,BufNewFile *.test set filetype=php
-  augroup END
+map <F2> :NERDTreeToggle<CR>
+map <F4> :set paste!<CR>
+
+let mapleader=','
+if exists(":Tabularize")
+  nmap <Leader>a= :Tabularize /=<CR>
+  vmap <Leader>a= :Tabularize /=<CR>
+  nmap <Leader>a: :Tabularize /:\zs<CR>
+  vmap <Leader>a: :Tabularize /:\zs<CR>
 endif
-syntax on
 
+"tests and tutorials
+map <Leader>o :NERDTreeToggle
+" Shortcut to rapidly toggle `set list`
+nmap <leader>l :set list!<CR>
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
 
-""
-" MAPPINGS
-""
-map <F2> :echo 'Current time is ' . strftime('%c')<CR>
-map! <F3> <C-R>=strftime('%c')<CR><Esc>
-nnoremap <silent> <F2> :lchdir %:p:h<CR>:pwd<CR>
+"align | , tabularize
+inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+function! s:align()
+  let p = '^\s*|\s.*\s|\s*$'
+  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+    Tabularize/|/l1
+    normal! 0
+    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+  endif
+endfunction
 
-
-
-"SEARCH
-"vimgrep next and previous
-map <C-n> :cn<CR>
-map <C-p> :cp<CR>
-
-"This mapping uses <cword> to get the word under the cursor, and searches for it in the current directory and all subdirectories, opening the quickfix window when done:
-map <F4> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
-
-
-
-"TABS
-"
-"custom tab stuff
-map <A-]> :tabnext<CR>
-map <A-[> :tabprevious<CR>
-map <A-n> :tabnew<CR>
-map <A-w> :tabclose<CR>
-
+"inoremap <silent> = =<Esc>:call <SID>ealign()<CR>a
+"function! s:ealign()
+"  let p = '^.*=.*$'
+"  if exists(':Tabularize') && getline('.') =~# '^.*=' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+"    let column = strlen(substitute(getline('.')[0:col('.')],'[^=]','','g'))
+"    let position = strlen(matchstr(getline('.')[0:col('.')],'.*=\s*\zs.*'))
+"    Tabularize/=
+"    normal! 0
+"    call search(repeat('[^=]*=',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+"  endif
+"endfunction
 
