@@ -50,7 +50,7 @@ set showmatch                            "" set show matching parenthesis
 set ignorecase                           "" ignore case when searching
 set smartcase                            "" ignore case if search pattern is all lowercase,
                                          "" case-sensitive otherwise
-"set smarttab                             "" insert tabs on the start of a line according to
+set smarttab                             "" insert tabs on the start of a line according to
                                          "" shiftwidth, not tabstop
 set hlsearch                             "" highlight search terms
 set incsearch                            "" show search matches as you type
@@ -76,15 +76,7 @@ if exists(":Tabularize")
   vmap <Leader>a= :Tabularize /=<CR>
   nmap <Leader>a: :Tabularize /:\zs<CR>
   vmap <Leader>a: :Tabularize /:\zs<CR>
-  nmap <Leader>a=> :Tabularize /=<CR>
-  vmap <Leader>a=> :Tabularize /=<CR>
 endif
-
-"tab navigation
-map th :tabnext<CR>
-map tl :tabprev<CR>
-map tn :tabnew<CR>
-map td :tabclose<CR>
 
 "tests and tutorials
 map <Leader>o :NERDTreeToggle
@@ -117,72 +109,4 @@ endfunction
 "    call search(repeat('[^=]*=',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
 "  endif
 "endfunction
-
-""""
-""" old .vimrc function
-""""
-"call pathogen#infect() 
-
-syntax on
-filetype plugin indent on
-set expandtab
-set tabstop=2
-set shiftwidth=2
-set autoindent
-set smartindent
-set number
-set ruler
-
-" highlight searches
-set hlsearch
-
-if has("autocmd") && exists("+omnifunc")            
-  autocmd Filetype *
-    \   if &omnifunc == "" |
-    \     setlocal omnifunc=syntaxcomplete#Complete |
-    \   endif
-endif
-if has("autocmd")
-  " Drupal *.module and *.install files.
-  augroup module
-    autocmd BufRead,BufNewFile *.module set filetype=drupal.php
-    autocmd BufRead,BufNewFile *.install set filetype=drupal.php
-    autocmd BufRead,BufNewFile *.test set filetype=drupal.php
-    autocmd BufRead,BufNewFile *.inc set filetype=drupal.php
-    autocmd BufRead,BufNewFile *.view set filetype=drupal.php
-  augroup END
-endif
-syntax on
-"drupal omnicompletion
-imap <buffer> <C-d> <C-\><C-O>:call drupal6complete#Map()<CR><C-X><C-O>
-
-""
-" MAPPINGS
-""
-map <F2> :echo 'Current time is ' . strftime('%c')<CR>
-map! <F3> <C-R>=strftime('%c')<CR><Esc>
-nnoremap <silent> <F2> :lchdir %:p:h<CR>:pwd<CR>
-
-
-
-"SEARCH
-"vimgrep next and previous
-map <C-n> :cn<CR>
-map <C-p> :cp<CR>
-
-"This mapping uses <cword> to get the word under the cursor, and searches for it in the current directory and all subdirectories, opening the quickfix window when done:
-map <F5> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
-
-
-
-"TABS
-"
-"custom tab stuff
-map <A-]> :tabnext<CR>
-map <A-[> :tabprevious<CR>
-map <A-n> :tabnew<CR>
-map <A-w> :tabclose<CR>
-
-
-"Indentation
 
